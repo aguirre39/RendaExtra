@@ -74,18 +74,117 @@ section {
     overflow: hidden; 
 }
 
-/* --- SEÇÃO BENEFÍCIOS E MÓDULOS --- */
-.card { 
-    border: none; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+/* --- ESTILOS PARA O BANNER DE GARANTIA NO TOPO --- */
+.top-guarantee-banner {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    margin-bottom: 50px;
+    text-align: center;
 }
-.card:hover { 
-    transform: translateY(-10px); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
+.logo-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
-#modules .card-title, #benefits .card-title { 
-    color: var(--bs-warning); 
+.logo-title .logo-highlight {
+    background-color: var(--bs-warning);
+    color: var(--bs-dark);
+    padding: 2px 12px;
+    border-radius: 7px;
 }
+.guarantee-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+.guarantee-text .text-highlight {
+    color: var(--bs-warning);
+}
+@media (max-width: 768px) {
+    .logo-title { font-size: 2.2rem; }
+    .guarantee-text { font-size: 1.3rem; }
+}
+
+/* --- SEÇÃO DE BENEFÍCIOS E KIT DE FERRAMENTAS (REVAMPED) --- */
+#benefits .card {
+    background-color: var(--bs-dark);
+}
+.success-item {
+    background-color: var(--bs-dark);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    height: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.success-item:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+}
+.success-item i {
+    font-size: 2.5rem;
+    color: var(--bs-warning);
+    margin-bottom: 15px;
+}
+.success-item span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --- SEÇÃO DE MÓDULOS (REVAMPED) --- */
+#modules {
+    background-color: var(--bs-dark);
+}
+.module-card {
+    background-color: var(--bs-secondary);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.module-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.module-number {
+    position: absolute;
+    top: -20px;
+    right: 5px;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+}
+.module-title {
+    font-size: 1.4rem;
+    color: var(--bs-warning);
+    margin-bottom: 10px;
+    position: relative;
+}
+.module-description {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 
 /* --- SEÇÃO "PARA QUEM É" --- */
 #for-you { 
@@ -103,115 +202,521 @@ section {
     color: var(--bs-dark); 
 }
 
-/* --- SEÇÃO PROVA SOCIAL COM CARDS --- */
+/* --- ESTILOS PROFISSIONAIS PARA SEÇÃO DE BÔNUS --- */
+#bonus {
+    background: #121212;
+}
+.bonus-card {
+    background-color: var(--bs-secondary);
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bonus-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+.bonus-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+.bonus-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bonus-card-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.bonus-tag {
+    background-color: var(--bs-warning);
+    color: var(--bs-dark);
+    font-weight: 900;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.bonus-card-body h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.bonus-description {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.bonus-value {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+.bonus-value del {
+    color: var(--bs-danger);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.bonus-value span {
+    display: block;
+    color: var(--bs-success);
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 5px;
+}
+.total-value-box {
+    background-color: var(--bs-secondary);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+.total-value-box::after {
+    content: 'ECONOMIA';
+    position: absolute;
+    top: 18px;
+    right: -45px;
+    background-color: var(--bs-danger);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+/* --- ESTILOS PROFISSIONAIS PARA DEPOIMENTOS EM VÍDEO --- */
+#testimonials {
+    background-color: var(--bs-secondary);
+}
+.testimonial-video-card {
+    background-color: var(--bs-dark);
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.testimonial-video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.video-thumbnail-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    background-color: #000;
+}
+.video-thumbnail-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.testimonial-video-content {
+    padding: 25px;
+    text-align: center;
+    flex-grow: 1;
+}
+.testimonial-video-content .testimonial-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+.testimonial-video-content .testimonial-quote::before {
+    content: '“';
+    font-size: 2rem;
+    color: var(--bs-warning);
+    line-height: 0;
+    margin-right: 5px;
+    vertical-align: -0.4em;
+}
+.testimonial-video-content .testimonial-quote::after {
+    content: '”';
+    font-size: 2rem;
+    color: var(--bs-warning);
+    line-height: 0;
+    margin-left: 5px;
+    vertical-align: -0.4em;
+}
+.testimonial-video-content .testimonial-author {
+    font-weight: 700;
+    color: #fff;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+/* --- ESTILOS PARA SEÇÃO DE PROVA SOCIAL COM PRINTS --- */
 #social-proof-prints { 
     background-color: var(--bs-dark); 
 }
 .testimonial-card { 
     background-color: #fff; 
     color: var(--bs-dark); 
-    padding: 2rem; 
-    border-radius: 10px; 
-    text-align: center; 
+    padding: 25px; 
+    border-radius: 12px; 
     height: 100%; 
     display: flex; 
     flex-direction: column; 
-    justify-content: center; 
     box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 .testimonial-card:hover { 
-    transform: translateY(-10px); 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.05);
+}
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: left;
 }
 .testimonial-profile-pic { 
-    width: 80px; 
-    height: 80px; 
+    width: 50px; 
+    height: 50px; 
     border-radius: 50%; 
     object-fit: cover; 
-    margin: 0 auto 1rem auto; 
+    margin-right: 15px;
     border: 3px solid var(--bs-warning); 
+}
+.testimonial-info {
+    line-height: 1.2;
+}
+.testimonial-author { 
+    font-weight: 900; 
+    color: var(--bs-dark); 
+    font-style: normal; 
+    font-size: 1.1rem;
+}
+.testimonial-stars { 
+    color: #f39c12; 
+    font-size: 1rem; 
 }
 .testimonial-quote { 
     font-size: 1rem; 
     font-style: italic; 
-    color: #555; 
-    margin-bottom: 1rem; 
-    flex-grow: 1; 
+    color: #34495e; 
+    margin: 0;
+    padding-top: 15px;
+    border-top: 1px solid #ecf0f1;
+    text-align: left;
+    flex-grow: 1;
 }
-.testimonial-stars { 
-    color: var(--bs-warning); 
-    font-size: 1.2rem; 
-    margin-bottom: 1rem; 
+.testimonial-quote::before {
+    content: '“';
+    margin-right: 2px;
 }
-.testimonial-author { 
-    font-weight: 700; 
-    color: var(--bs-dark); 
-    font-style: normal; 
+.testimonial-quote::after {
+    content: '”';
+    margin-left: 2px;
 }
-
-/* --- SEÇÃO OFERTA --- */
-#offer .payment-logos img { 
-    max-height: 40px; 
-    margin: 0 8px;
-}
-#offer .fs-5 .fa-check { 
-    margin-right: 8px; 
-}
-
-/* NOVO: Estilos profissionais para a seção de Formas de Pagamento */
-#offer .payment-methods-container {
-    max-width: 600px;
-    margin: 2.5rem auto 0 auto;
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
+.final-cta-block {
+    background-color: var(--bs-secondary);
     border: 1px solid #333;
     border-radius: 12px;
+    padding: 40px;
+    margin-top: 80px;
     text-align: center;
 }
 
-.payment-methods-title {
+/* --- SEÇÃO DE OFERTA (REVAMPED) --- */
+#offer {
+    background-color: #121212;
+}
+.offer-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.offer-header .fa-star {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.offer-header h2 {
+    font-size: 2.5rem;
+    color: var(--bs-light);
+    font-weight: 900;
+}
+.offer-header .lead {
+    font-size: 1.2rem;
+    margin-top: -5px;
+}
+.offer-body {
+    margin: 30px 0;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.whats-included-title {
+    font-size: 1.1rem;
     font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ccc;
     text-transform: uppercase;
-    color: #bbbbbb;
-    font-size: 0.9rem;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+}
+.included-list {
+    font-size: 1.1rem;
+    color: #ddd;
+    list-style: none;
+    padding-left: 0;
+}
+.included-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.included-list i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 20px;
+}
+.included-list span {
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+}
+.price-box {
+    background-color: #121212;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.price-box .total-value {
+    color: #aaa;
+    font-weight: 700;
+}
+.price-box .installments {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+.price-box .price {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--bs-warning);
+    line-height: 1.1;
+}
+.price-box .full-price {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+#offer .cta-button {
+    font-size: 1.5rem;
 }
 
-.payment-icons-wrapper {
+.payment-logos-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
     flex-wrap: wrap;
 }
-
 .payment-icon {
     display: flex;
-    flex-direction: row; /* Alterado para alinhar lado a lado */
+    flex-direction: column;
     align-items: center;
-    gap: 0.8rem; /* Ajuste no espaçamento */
-    transition: transform 0.3s ease;
+    gap: 0.7rem;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .payment-icon:hover {
-    transform: scale(1.05); /* Animação de escala no hover */
+    color: #fff;
+    transform: scale(1.1);
 }
-
 .payment-icon i {
-    font-size: 2.2rem; /* Tamanho do ícone ajustado */
+    font-size: 2.5rem;
 }
-
 .payment-icon .fa-credit-card { color: #3498db; }
-.payment-icon .fa-barcode { color: #9b59b6; }
+.payment-icon .fa-barcode { color: #8e44ad; }
 .payment-icon .fa-pix { color: #2ecc71; }
-
 .payment-icon span {
     font-size: 1rem;
-    font-weight: 400;
-    color: #bbbbbb;
+    font-weight: 700;
 }
 
+/* ===== CÓDIGO NOVO E PROFISSIONAL PARA A GARANTIA ===== */
+.guarantee-footer {
+    display: flex;
+    align-items: center;
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.security-info, .guarantee-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.guarantee-info {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+}
+
+.guarantee-footer i {
+    font-size: 2.2rem;
+}
+
+.security-info i {
+    color: var(--bs-warning); /* Ícone de cadeado amarelo */
+}
+
+.guarantee-info i {
+    color: var(--bs-success);
+}
+
+.guarantee-footer div > div {
+    line-height: 1.3;
+}
+
+.guarantee-footer span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #bbb;
+    display: block;
+}
+
+.guarantee-footer strong {
+    font-size: 1rem;
+    color: #fff;
+    display: block;
+}
+
+/* Responsividade para o novo bloco de garantia */
+@media (max-width: 576px) {
+    .guarantee-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .guarantee-info {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+}
+/* ===== FIM DO NOVO CÓDIGO ===== */
+
+/* --- SEÇÃO MÍDIA (NOVA) --- */
+#media-mentions {
+    background-color: var(--bs-dark);
+}
+
+.media-video-card {
+    background-color: var(--bs-secondary);
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.media-video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.media-video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém a proporção 16:9 para vídeos */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.media-video-card .video-title {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-light);
+    text-align: center;
+    flex-grow: 1; /* Garante que o título ocupe o espaço restante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-article-card {
+    background-color: var(--bs-secondary);
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Herda a cor do texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.media-article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.media-article-card .article-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Proporção para imagens de artigo */
+    overflow: hidden;
+}
+.media-article-card .article-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.media-article-card .article-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaço entre título e fonte */
+}
+.media-article-card h3 {
+    font-size: 1.25rem;
+    color: var(--bs-warning);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.media-article-card .article-source {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: auto; /* Empurra para o final do card */
+}
 
 /* --- SEÇÃO FAQ --- */
 .accordion-item { 
@@ -293,87 +798,6 @@ footer a:hover {
     font-size: 0.8rem; 
     text-transform: uppercase; 
     color: var(--bs-light); 
-}
-
-/* --- SEÇÃO DE GARANTIA PREMIUM --- */
-.guarantee-container { 
-    background: linear-gradient(45deg, #bfa048, #e0c268); 
-    color: #fff; 
-    max-width: 850px; 
-    border-radius: 15px; 
-    border: 2px solid #fff; 
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.2); 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
-    padding: 2rem; 
-}
-.guarantee-badge { 
-    background-color: #fff; 
-    color: #212529; 
-    padding: 15px; 
-    border-radius: 12px; 
-    width: auto; 
-    margin: 0 auto; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 15px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-}
-.guarantee-badge .guarantee-number { 
-    font-size: 5.5rem; 
-    font-weight: 900; 
-    line-height: 1; 
-    color: #bfa048; 
-}
-.guarantee-badge .guarantee-details { 
-    display: flex; 
-    flex-direction: column; 
-    text-align: left; 
-    line-height: 1.2; 
-    text-shadow: none; 
-}
-.guarantee-badge .guarantee-text { 
-    font-size: 1.1rem; 
-    font-weight: 900; 
-    text-transform: uppercase; 
-}
-.guarantee-badge .guarantee-stars { 
-    color: #f1c40f; 
-    font-size: 1.2rem; 
-}
-.guarantee-divider { 
-    overflow: hidden; 
-}
-.guarantee-divider h4 { 
-    position: relative; 
-    background-color: transparent !important; 
-    font-size: 1rem; 
-    font-weight: bold; 
-    text-transform: uppercase; 
-    display: inline-block; 
-    padding: 0 1rem; 
-}
-.guarantee-divider:before, .guarantee-divider:after { 
-    content: ""; 
-    display: inline-block; 
-    width: 35%; 
-    height: 2px; 
-    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0)); 
-    vertical-align: middle; 
-    margin: 0 0.5rem; 
-}
-.guarantee-container h3 { 
-    font-size: 2rem; 
-    font-weight: 900; 
-}
-.guarantee-container .double-guarantee-text { 
-    background-color: rgba(0,0,0,0.2); 
-    padding: 10px 15px; 
-    border-radius: 8px; 
-    border: 1px solid rgba(255,255,255,0.2); 
-    font-size: 1.2rem; 
-    font-weight: 700 !important; 
-    color: #fff; 
 }
 
 /* --- POPUP DE PROVA SOCIAL --- */
@@ -462,43 +886,86 @@ footer a:hover {
     line-height: 1;
 }
 
-/* NOVO: Estilos para formas de pagamento com ícones */
-#offer .payment-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    background-color: rgba(0,0,0,0.2);
-    padding: 1.5rem;
-    border-radius: 10px;
+/* --- ESTILOS PARA SEÇÃO DE PROFESSORES --- */
+#professors {
+    background-color: var(--bs-secondary);
+}
+.professor-card {
+    background-color: var(--bs-dark);
+    border-radius: 12px;
     border: 1px solid #333;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
-
-.payment-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: #bbbbbb;
-    transition: color 0.3s ease, transform 0.3s ease;
+.professor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
-
-.payment-icon:hover {
-    color: #ffffff;
-    transform: scale(1.1);
+.professor-image {
+    position: relative;
 }
-
-.payment-icon i {
-    font-size: 2.5rem;
+.professor-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
 }
-
-/* Cores específicas para cada ícone */
-.payment-icon .fa-credit-card { color: #3498db; }
-.payment-icon .fa-barcode { color: #9b59b6; }
-.payment-icon .fa-pix { color: #2ecc71; }
-
-.payment-icon span {
-    font-size: 0.9rem;
+.professor-name {
+    position: absolute;
+    bottom: 20px;
+    left: -2px;
+    background-color: var(--bs-dark);
+    padding: 10px 20px 10px 25px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+.professor-name span {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 15px;
+}
+.professor-name span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 5px;
+    background-color: var(--bs-danger);
+    border-radius: 5px;
+}
+.professor-details {
+    padding: 25px;
+}
+.professor-details h4 {
+    font-size: 1.2rem;
     font-weight: 700;
+    color: var(--bs-warning);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.professor-details p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- DIVISÓRIAS DE SEÇÃO --- */
+.section-divider-wrapper {
+    background-color: var(--bs-dark);
+    padding: 40px 0;
+}
+.section-divider {
+    width: 80%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #333, transparent);
+    margin: 0 auto;
 }
