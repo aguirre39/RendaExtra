@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
      * ------------------------------------------------------------------
      * ESTRATÉGIA 1: URGÊNCIA E ESCASSEZ (CRONÔMETRO REGRESSIVO)
      * ------------------------------------------------------------------
-     * Cria um senso de que a oferta é limitada, incentivando a ação imediata.
-     * Este cronômetro é "evergreen", ou seja, ele reseta para cada novo visitante.
      */
     function startCountdown(duration, displayElements) {
         let timer = duration, minutes, seconds;
@@ -40,11 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
     
-    // Inicia o cronômetro para os dois locais na página
     const countdownTimer1 = document.getElementById('countdown-timer1');
     const countdownTimer2 = document.getElementById('countdown-timer2');
     if (countdownTimer1 && countdownTimer2) {
-         // 30 minutos em segundos
         startCountdown(60 * 30, [countdownTimer1, countdownTimer2]);
     }
 
@@ -53,8 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
      * ------------------------------------------------------------------
      * ESTRATÉGIA 2: PROVA SOCIAL EM TEMPO REAL (FAKE)
      * ------------------------------------------------------------------
-     * Simula atividade na página, mostrando que outras pessoas estão comprando.
-     * Isso cria FOMO (Fear Of Missing Out - Medo de Ficar de Fora).
      */
     function socialProofPopup() {
         const popup = document.getElementById('social-proof');
@@ -75,10 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(() => {
                 popup.classList.remove('show');
-            }, 5000); // Popup fica visível por 5 segundos
+            }, 5000);
         }
 
-        // Mostra o primeiro popup após 8 segundos, e depois a cada 15 segundos
         setTimeout(() => {
             showPopup();
             setInterval(showPopup, 15000);
@@ -89,44 +82,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * ------------------------------------------------------------------
-     * ESTRATÉGIA 3: RECUPERAÇÃO DE VENDAS (POPUP DE INTENÇÃO DE SAÍDA)
+     * ESTRATÉGIA 3: RECUPERAÇÃO DE VENDAS (POPUP INTELIGENTE)
+     * --- LÓGICA SEPARADA E AVANÇADA PARA DESKTOP E MOBILE ---
      * ------------------------------------------------------------------
-     * Tenta reter o visitante que está prestes a sair da página com uma última oferta.
-     * Aciona quando o mouse se move para fora da janela do navegador.
      */
     function exitIntentPopup() {
         const popup = document.getElementById('exit-intent');
         const closeButton = document.getElementById('exit-intent-close');
         if (!popup || !closeButton) return;
-        
+    
         let hasShown = false;
-
-        const showExitPopup = () => {
-            if (!hasShown) {
-                popup.classList.add('show');
-                hasShown = true;
-            }
+    
+        const showExitPopup = (triggerType) => {
+            if (hasShown) return; // Garante que o popup seja mostrado apenas uma vez
+            
+            console.log(`Gatilho de Saída Ativado: ${triggerType}`);
+            hasShown = true;
+            
+            popup.classList.add('show');
+            
+            // Remove os listeners para não disparar novamente
+            document.removeEventListener('mouseleave', handleMouseLeave);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+            window.removeEventListener('scroll', handleScroll);
         };
-
-        document.addEventListener('mouseleave', function (e) {
-            // e.clientY < 0 significa que o mouse foi para o topo da página (aba/URL)
-            if (e.clientY < 0) {
-                showExitPopup();
-            }
-        });
-
+    
+        // Lógica para fechar o popup
         closeButton.addEventListener('click', () => {
             popup.classList.remove('show');
         });
+    
+        // --- LÓGICA PARA DESKTOP (PC COM MOUSE) ---
+        const handleMouseLeave = (e) => {
+            if (e.clientY < 0) {
+                showExitPopup('Mouse Leave (Desktop)');
+            }
+        };
+
+        // --- LÓGICA PARA SMARTPHONE ---
+        let lastScrollY = window.scrollY;
+        
+        // Gatilho 1 (Mobile): Rolagem rápida para cima
+        const handleScroll = () => {
+            // Verifica se o usuário rolou pelo menos 200px para baixo antes de ativar
+            if (window.scrollY > 200 && window.scrollY < lastScrollY - 30) { 
+                showExitPopup('Scroll Up (Mobile)');
+            }
+            lastScrollY = window.scrollY;
+        };
+
+        // Gatilho 2 (Mobile): O usuário muda de aba ou app
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                showExitPopup('Visibility Change (Mobile)');
+            }
+        };
+
+        // --- ATIVANDO A LÓGICA CORRETA PARA CADA DISPOSITIVO ---
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            // É um dispositivo de toque (smartphone/tablet)
+            console.log("Modo de detecção de saída: Mobile (Scroll & Visibility)");
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+        } else {
+            // É um dispositivo com mouse (PC)
+            console.log("Modo de detecção de saída: Desktop (Mouse Leave)");
+            document.addEventListener('mouseleave', handleMouseLeave);
+        }
     }
     exitIntentPopup();
 
 
     /**
      * ------------------------------------------------------------------
-     * RASTREAMENTO DE CLIQUES OTIMIZADO (Seu código original mantido e integrado)
+     * RASTREAMENTO DE CLIQUES OTIMIZADO
      * ------------------------------------------------------------------
-     * Mantém seu sistema de rastreio de cliques via Google Script.
      */
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFkVks_70iwVVyU-EWYaP3pbiSD9uij6L__PhK8L0FaSZVDsjU21yf7SocPhG0UpR7/exec';
 
