@@ -969,3 +969,21 @@ footer a:hover {
     background: linear-gradient(to right, transparent, #333, transparent);
     margin: 0 auto;
 }
+
+
+/**
+ * ==================================================================
+ * ALTERAÇÃO: CÓDIGO PARA A ESTRATÉGIA DE CONTEÚDO ATRASADO
+ * ==================================================================
+ */
+.conteudo-atrasado {
+    /* Esconde o conteúdo visualmente, mas prepara para uma transição suave */
+    opacity: 0;
+    
+    /* Remove a altura do elemento para que ele não ocupe espaço na página */
+    height: 0;
+    overflow: hidden;
+    
+    /* Define a animação de "fade-in" que durará 1.5 segundos quando a opacidade mudar */
+    transition: opacity 1.5s ease;
+}
