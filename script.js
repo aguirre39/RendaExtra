@@ -1,9 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     /**
-     * ------------------------------------------------------------------
+     * ==================================================================
+     * NOVA ESTRATÉGIA PROFISSIONAL: CONTEÚDO ATRASADO (DELAYED CONTENT)
+     * Foco total no vídeo no primeiro minuto, depois revela o resto.
+     * ==================================================================
+     */
+    function revelarConteudoAtrasado() {
+        // Define o tempo de espera em milissegundos (60.000ms = 1 minuto)
+        const tempoDeEspera = 60000; 
+        
+        // Seleciona todos os elementos que devem ser revelados (os que têm a classe .conteudo-atrasado)
+        const elementosOcultos = document.querySelectorAll('.conteudo-atrasado');
+
+        // Apenas executa se encontrar os elementos na página
+        if (elementosOcultos.length > 0) {
+            
+            // Agenda a execução da função para depois do tempo de espera
+            setTimeout(() => {
+                console.log('Tempo de espera de 1 minuto finalizado. Revelando o restante da página.');
+                
+                // Itera sobre cada elemento que estava oculto
+                elementosOcultos.forEach(el => {
+                    // Devolve a altura original para que o elemento ocupe seu espaço na tela
+                    el.style.height = 'auto'; 
+                    // Faz o conteúdo aparecer suavemente (disparando a transição definida no CSS)
+                    el.style.opacity = '1';   
+                });
+            }, tempoDeEspera);
+        }
+    }
+    // Ativa a estratégia de conteúdo atrasado assim que a página carrega
+    revelarConteudoAtrasado();
+
+
+    /**
+     * ==================================================================
+     * SEU CÓDIGO ORIGINAL COMEÇA AQUI (PERMANECE IGUAL)
+     * ==================================================================
+     */
+
+    /**
      * ESTRATÉGIA 1: URGÊNCIA E ESCASSEZ (CRONÔMETRO REGRESSIVO)
-     * ------------------------------------------------------------------
      */
     function startCountdown(duration, displayElements) {
         let timer = duration, minutes, seconds;
@@ -46,9 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /**
-     * ------------------------------------------------------------------
      * ESTRATÉGIA 2: PROVA SOCIAL EM TEMPO REAL (FAKE)
-     * ------------------------------------------------------------------
      */
     function socialProofPopup() {
         const popup = document.getElementById('social-proof');
@@ -81,10 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /**
-     * ------------------------------------------------------------------
      * ESTRATÉGIA 3: RECUPERAÇÃO DE VENDAS (POPUP INTELIGENTE)
-     * --- LÓGICA SEPARADA E AVANÇADA PARA DESKTOP E MOBILE ---
-     * ------------------------------------------------------------------
      */
     function exitIntentPopup() {
         const popup = document.getElementById('exit-intent');
@@ -154,9 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /**
-     * ------------------------------------------------------------------
      * RASTREAMENTO DE CLIQUES OTIMIZADO
-     * ------------------------------------------------------------------
      */
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFkVks_70iwVVyU-EWYaP3pbiSD9uij6L__PhK8L0FaSZVDsjU21yf7SocPhG0UpR7/exec';
 
