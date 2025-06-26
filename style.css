@@ -64,7 +64,7 @@ section {
 
 /* --- SEÇÃO HERO --- */
 #hero { 
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://placehold.co/1920x1080/000000/333333?text=Plano+de+Fundo') no-repeat center center; 
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('') no-repeat center center; 
     background-size: cover; 
 }
 #hero .video-container { 
@@ -987,3 +987,231 @@ footer a:hover {
     /* Define a animação de "fade-in" que durará 1.5 segundos quando a opacidade mudar */
     transition: opacity 1.5s ease;
 }
+
+
+/* =================================================================== */
+/* INÍCIO DOS ESTILOS DO VENDEDOR COM IA (ATUALIZADO) */
+/* =================================================================== */
+#ai-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1070;
+}
+
+#ai-chat-bubble {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bs-success); /* Cor padronizada */
+    color: #fff; /* Melhor contraste com o verde */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0);
+    opacity: 0;
+}
+
+#ai-chat-bubble.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#ai-chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bs-danger);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bs-dark);
+}
+
+#ai-chat-window {
+    width: 350px;
+    max-width: 90vw;
+    height: 500px;
+    max-height: 80vh;
+    background-color: var(--bs-dark);
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#ai-chat-window.show {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#ai-chat-header {
+    background-color: var(--bs-secondary);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.ai-chat-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bs-success); /* Cor padronizada */
+    color: #fff; /* Melhor contraste */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.ai-chat-info strong {
+    color: white;
+    font-weight: 700;
+    display: block;
+}
+.ai-chat-info span {
+    color: var(--bs-success);
+    font-size: 0.8rem;
+}
+
+#ai-chat-close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#ai-chat-close-btn:hover {
+    color: white;
+}
+
+#ai-chat-box {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Custom scrollbar for chat box */
+#ai-chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+#ai-chat-box::-webkit-scrollbar-track {
+  background: var(--bs-dark);
+}
+#ai-chat-box::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+}
+
+.ai-chat-message {
+    max-width: 85%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+}
+
+.ai-chat-message.ai {
+    background-color: #2a2a2a;
+    color: #eee;
+    border-bottom-left-radius: 5px;
+    align-self: flex-start;
+}
+
+.ai-chat-message.user {
+    background-color: var(--bs-success); /* Cor padronizada */
+    color: #fff; /* Melhor contraste */
+    border-bottom-right-radius: 5px;
+    align-self: flex-end;
+    font-weight: 500;
+}
+
+.ai-chat-message.typing-indicator {
+    align-self: flex-start;
+    padding: 12px 15px;
+    background-color: #2a2a2a;
+}
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: #888;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
+#ai-chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #333;
+    gap: 10px;
+}
+
+#ai-chat-input {
+    flex-grow: 1;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+#ai-chat-input:focus {
+    border-color: var(--bs-success); /* Cor padronizada */
+}
+
+#ai-chat-send-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bs-success); /* Cor padronizada */
+    color: #fff; /* Melhor contraste */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+#ai-chat-send-btn:hover {
+    background-color: #27ae60; /* Cor padronizada */
+}
+/* =================================================================== */
+/* FIM DOS ESTILOS DO VENDEDOR COM IA */
+/* =================================================================== */
