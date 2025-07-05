@@ -218,7 +218,7 @@
                 <div class="bg-slate-800 p-6 rounded-lg"><p class="text-slate-300 mb-4 italic">"Estava com medo, mas a garantia me deu confiança. Hoje trabalho de casa e sou meu próprio chefe."</p><p class="font-bold text-right text-yellow-400">- Fernanda A.</p></div>
                 <div class="bg-slate-800 p-6 rounded-lg"><p class="text-slate-300 mb-4 italic">"As aulas ao vivo são o grande diferencial. O Thiago pega na nossa mão e mostra tudo."</p><p class="font-bold text-right text-yellow-400">- Bruno S.</p></div>
             </div>
-                 <p class="text-center mt-6 text-sm text-slate-500">Fonte: Destaques "Resultados" no Instagram <a href="https://www.instagram.com/othiagohora/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">@othiagohora</a></p>
+                 <p class="text-center mt-6 text-sm text-slate-500">Fonte: Destaques "Resultados" no Instagram <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTI3NDcwOTE4OTg4Njg2?story_media_id=2873131308961299988_39904918921&igsh=MXB1OHdhODgzNWh2OA==" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">@othiagohora</a></p>
 
         </section>
         <section class="mb-16 reveal-animation">
@@ -393,7 +393,7 @@
             
             <div class="flex-shrink-0 bg-slate-800 p-4 flex justify-between items-center rounded-t-2xl sm:rounded-t-xl border-b border-slate-700">
                 <div class="flex items-center gap-3">
-                    <div class="relative"><img src="https://i.pravatar.cc/40?u=lucas_consultor" alt="Avatar Lucas" class="w-10 h-10 rounded-full border-2 border-green-400"><span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-slate-800"></span></div>
+                    <div class="relative"><img src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-10 h-10 rounded-full border-2 border-green-400"><span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-slate-800"></span></div>
                     <div>
                         <h3 class="font-bold text-white">Lucas (Consultor de Vendas)</h3>
                         <p class="text-xs text-green-400">Online pra te ajudar!</p>
@@ -405,94 +405,58 @@
             <div x-ref="chatContainer" class="flex-grow p-4 overflow-y-auto space-y-6">
                 <template x-for="message in messages" :key="message.id">
                     <div class="flex items-end gap-2" :class="message.sender === 'user' ? 'justify-end' : ''">
-                        <img x-show="message.sender === 'lucas'" src="https://i.pravatar.cc/40?u=lucas_consultor" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
+                        <img x-show="message.sender === 'lucas'" src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
                         <div class="max-w-[80%] rounded-xl px-4 py-2" :class="message.sender === 'user' ? 'bg-green-600 text-white rounded-br-none' : 'bg-slate-800 text-slate-200 rounded-bl-none'">
                             <p class="text-sm prose prose-invert prose-sm leading-relaxed" x-html="message.text"></p>
                         </div>
                     </div>
                 </template>
                 <div x-show="typing" class="flex items-end gap-2">
-                    <img src="https://i.pravatar.cc/40?u=lucas_consultor" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
+                    <img src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
                     <div class="max-w-[80%] rounded-xl px-4 py-3 bg-slate-800 text-slate-200 rounded-bl-none flex items-center gap-1"><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span></div>
                 </div>
             </div>
 
             <div class="flex-shrink-0 p-3 bg-slate-900/50 border-t border-slate-700">
-                <div x-show="!typing && messages.length <= 3" class="mb-2 flex flex-wrap gap-2 justify-center">
+                <!-- ✅ BOTÕES DE RESPOSTA RÁPIDA AGORA SÓ APARECEM APÓS A INTRODUÇÃO -->
+                <div x-show="!typing && conversationState === 'chatting'" class="mb-2 flex flex-wrap gap-2 justify-center">
                     <button @click="quickSend('Preciso investir pra começar?')" class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full hover:bg-slate-700 transition">Preciso investir?</button>
                     <button @click="quickSend('Isso funciona pra quem não entende de computador?')" class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full hover:bg-slate-700 transition">Funciona pra iniciantes?</button>
                     <button @click="quickSend('Como funciona a garantia?')" class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full hover:bg-slate-700 transition">E a garantia?</button>
                 </div>
                 <form @submit.prevent="sendUserMessage()" class="flex items-center gap-2">
-                    <input x-model="userInput" type="text" placeholder="Me manda sua dúvida aqui..." :disabled="typing" class="w-full bg-slate-800 border-2 border-slate-700 rounded-lg py-2 px-4 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition disabled:opacity-50">
+                    <input x-model="userInput" type="text" :placeholder="conversationState === 'awaiting_name' ? 'Digite seu nome...' : 'Me manda sua dúvida aqui...'" :disabled="typing" class="w-full bg-slate-800 border-2 border-slate-700 rounded-lg py-2 px-4 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition disabled:opacity-50">
                     <button type="submit" :disabled="typing || userInput.trim() === ''" class="bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors disabled:bg-slate-600 disabled:cursor-not-allowed"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- ✅ HTML DAS NOTIFICAÇÕES FAKES -->
-    <div id="social-proof-container" class="fixed bottom-5 left-5 z-[100] space-y-3"></div>
-    <div id="viewers-notification" class="fixed bottom-5 right-5 z-[100]"></div>
+    <!-- ✅ INÍCIO DAS MODIFICAÇÕES: CONTAINERS DE NOTIFICAÇÃO -->
+    <div id="social-proof-container" class="fixed bottom-5 left-5 z-40 space-y-3"></div>
+    <div id="viewers-notification" class="fixed bottom-5 right-5 z-40"></div>
+    <div id="chatbot-prompt-container" class="fixed bottom-24 sm:bottom-5 left-5 z-40 w-full max-w-sm sm:w-auto"></div>
+    <!-- ✅ FIM DAS MODIFICAÇÕES -->
 
     <script>
     document.addEventListener('alpine:init', () => {
-        // Usamos Alpine.store para gerenciar o estado globalmente
+        // STORE DO VIRALYST ENGINE (sem alterações)
         Alpine.store('viralystEngine', {
-            // --- ESTADO DA APLICAÇÃO ---
-            loading: false,
-            loaderStep: 0,
-            step: 1, // 1: Botão de Ação, 2: Resultados
-            result: {},
-
-            // --- NOSSA INTELIGÊNCIA DE MERCADO OTIMIZADA PARA O PRODUTO ---
+            loading: false, loaderStep: 0, step: 1, result: {},
             viralDatabase: [
-                { 
-                    topic: "O serviço de R$300 no Canva que ninguém te conta", 
-                    score: "9.2", platform: "TikTok", 
-                    audience: "Pessoas buscando uma renda extra rápida, mesmo sem experiência, que já ouviram falar do Canva.", 
-                    potential_score: 90, competition_score: 40, alignment_score: 95,
-                    analysis: "A combinação de uma ferramenta popular e gratuita (Canva) com uma promessa de ganho específica ('R$300') e um segredo ('ninguém te conta') gera altíssima curiosidade e atrai o público exato que busca uma solução como o 'Sua Renda em Casa'.", 
-                    hook: "Você usa o Canva de graça, mas sabia que tem um serviço dentro dele que pode te render R$300 por cliente, sem precisar ser designer?", 
-                    content_steps: "Mostre a tela do Canva. Revele o 'serviço' (ex: criação de apresentações corporativas, kits de marca para Instagram). Mostre um exemplo de 'antes e depois' rápido e impressionante.", 
-                    cta: "Esse é só um dos serviços que ensinamos a vender no nosso método. Para ter o passo a passo completo, clique no botão aqui na página e garanta sua vaga!",
-                    goal_tags: ['vender_produto', 'gerar_leads'],
-                    hashtags: ["rendaextra", "canva", "trabalharemcasa", "freelancer"], 
-                    bg_image: "https://images.unsplash.com/photo-1611162617213-6d22e4ca1c78?q=80&w=774&auto=format&fit=crop" 
-                },
-                { 
-                    topic: "Transformei meu celular numa máquina de R$100/dia", 
-                    score: "9.8", platform: "TikTok / Reels", 
-                    audience: "Público amplo, com forte apelo a pessoas que se sentem perdidas, buscando esperança e uma saída financeira usando o que já têm: o celular.", 
-                    potential_score: 98, competition_score: 50, alignment_score: 98,
-                    analysis: "Histórias de transformação (Jornada do Herói) geram conexão emocional imediata. Ao focar no celular, uma ferramenta que todos possuem, a barreira de entrada é eliminada, tornando a história altamente identificável e provando que o método é para qualquer um.", 
-                    hook: "Me disseram que era impossível ganhar dinheiro só com o celular. Hoje eu faço R$100 por dia com ele, e vou te mostrar como.", 
-                    content_steps: "Mostre o celular. Mostre um exemplo do serviço (ex: agendando posts, respondendo clientes). Mostre um print de um PIX recebido. Compare o 'antes' (frustração) com o 'agora' (resultados).",
-                    cta: "Se eu consegui, você também consegue. O método exato que eu uso está disponível por tempo limitado nesta página. Garanta sua vaga no botão abaixo!", 
-                    goal_tags: ['vender_produto', 'crescer_autoridade'],
-                    hashtags: ["empreendedorismo", "rendaonline", "marketingdigital", "trabalhardecasa"], 
-                    bg_image: "https://images.unsplash.com/photo-1598331668826-2136b0490b79?q=80&w=870&auto=format&fit=crop"
-                }
+                { topic: "O serviço de R$300 no Canva que ninguém te conta", score: "9.2", platform: "TikTok", audience: "Pessoas buscando uma renda extra rápida, mesmo sem experiência, que já ouviram falar do Canva.", potential_score: 90, competition_score: 40, alignment_score: 95, analysis: "A combinação de uma ferramenta popular e gratuita (Canva) com uma promessa de ganho específica ('R$300') e um segredo ('ninguém te conta') gera altíssima curiosidade e atrai o público exato que busca uma solução como o 'Sua Renda em Casa'.", hook: "Você usa o Canva de graça, mas sabia que tem um serviço dentro dele que pode te render R$300 por cliente, sem precisar ser designer?", content_steps: "Mostre a tela do Canva. Revele o 'serviço' (ex: criação de apresentações corporativas, kits de marca para Instagram). Mostre um exemplo de 'antes e depois' rápido e impressionante.", cta: "Esse é só um dos serviços que ensinamos a vender no nosso método. Para ter o passo a passo completo, clique no botão aqui na página e garanta sua vaga!", goal_tags: ['vender_produto', 'gerar_leads'], hashtags: ["rendaextra", "canva", "trabalharemcasa", "freelancer"], bg_image: "https://images.unsplash.com/photo-1611162617213-6d22e4ca1c78?q=80&w=774&auto=format&fit=crop" },
+                { topic: "Transformei meu celular numa máquina de R$100/dia", score: "9.8", platform: "TikTok / Reels", audience: "Público amplo, com forte apelo a pessoas que se sentem perdidas, buscando esperança e uma saída financeira usando o que já têm: o celular.", potential_score: 98, competition_score: 50, alignment_score: 98, analysis: "Histórias de transformação (Jornada do Herói) geram conexão emocional imediata. Ao focar no celular, uma ferramenta que todos possuem, a barreira de entrada é eliminada, tornando a história altamente identificável e provando que o método é para qualquer um.", hook: "Me disseram que era impossível ganhar dinheiro só com o celular. Hoje eu faço R$100 por dia com ele, e vou te mostrar como.", content_steps: "Mostre o celular. Mostre um exemplo do serviço (ex: agendando posts, respondendo clientes). Mostre um print de um PIX recebido. Compare o 'antes' (frustração) com o 'agora' (resultados).", cta: "Se eu consegui, você também consegue. O método exato que eu uso está disponível por tempo limitado nesta página. Garanta sua vaga no botão abaixo!", goal_tags: ['vender_produto', 'crescer_autoridade'], hashtags: ["empreendedorismo", "rendaonline", "marketingdigital", "trabalhardecasa"], bg_image: "https://images.unsplash.com/photo-1598331668826-2136b0490b79?q=80&w=870&auto=format&fit=crop" }
             ],
-
-            // --- AÇÕES DA FERRAMENTA ---
             analyzeConversion() {
-                this.loading = true;
-                this.result = {};
-                this.loaderStep = 0;
-                this.step = 2;
-
+                this.loading = true; this.result = {}; this.loaderStep = 0; this.step = 2;
                 const updateStep = (step) => { if (this.loading) this.loaderStep = step; };
-
                 updateStep(1);
                 setTimeout(() => updateStep(2), 1000);
                 setTimeout(() => updateStep(3), 2000);
                 setTimeout(() => updateStep(4), 3200);
                 setTimeout(() => updateStep(5), 4200);
-
                 setTimeout(() => {
                     if (!this.loading) return;
-                    // A inteligência agora seleciona aleatoriamente entre as melhores estratégias alinhadas ao produto
                     const randomIndex = Math.floor(Math.random() * this.viralDatabase.length);
                     this.result = this.viralDatabase[randomIndex];
                     this.loading = false;
@@ -500,46 +464,150 @@
             }
         });
 
+        // INÍCIO DA LÓGICA DO CHATBOT
         Alpine.store('chatbot', {
-            chatOpen: false, typing: false, messages: [], userInput: '', chatContainer: null,
+            chatOpen: false, 
+            typing: false, 
+            messages: [], 
+            userInput: '', 
+            chatContainer: null,
+            userName: '', 
+            conversationState: 'initial',
 
             systemContext: `
-            **SUA PERSONA:**
-            - Você é o Lucas, um consultor de vendas real, humano e super gente boa do time do Thiago Hora.
-            - Você NÃO é uma IA, não é um robô, não é um assistente virtual. Você é uma pessoa.
-            - Seu tom de voz é informal, animado, positivo e extremamente persuasivo. Use gírias leves como 'cara', 'demais', 'top', 'bora', 'fechou?'.
-            - Use muitos emojis para transmitir emoção: 🎉, 🚀, 😉, ✅, 💰, 🔥.
-            - Seu principal objetivo é CONVENCER a pessoa a comprar o "Método Renda em Casa 2.0" e sentir que está fazendo o melhor negócio da vida dela. Você adora fechar vendas!
 
-            **INFORMAÇÕES DO PRODUTO (VOCÊ SABE TUDO SOBRE ISSO):**
-            - **Nome:** Método Renda em Casa 2.0 (do Thiago Hora).
-            - **Promessa Principal:** Ganhar de R$50 a R$200 por dia só com o celular, começando do zero.
-            - **Público-alvo:** Iniciantes totais, pessoas com pouco tempo (só precisa de 1h por dia), e quem tem medo de tecnologia (o método é passo a passo, clique a clique).
-            - **Preço:** A oferta atual é uma pechincha! Só 12x de R$ 10,03 ou R$ 97 à vista. Sempre reforce que é um valor muito baixo pelo tanto que entrega.
-            - **GARANTIA DUPLA (Seu trunfo!):** Essa garantia é matadora! A pessoa tem 7 dias pra testar tudo e pedir o dinheiro de volta se não gostar. E MAIS: se ela aplicar o método por 30 dias e provar que não teve resultado, o Thiago devolve o dinheiro e ainda dá R$100 no PIX dela. É RISCO ZERO!
-            - **Bônus Incríveis:** Aulas ao vivo com o próprio Thiago e um guia completo pra achar os primeiros clientes.
-            - **Link de Compra (Seu link de afiliado):** https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb
-            - **Contato para dúvidas complexas (ESSENCIAL):** Se a pergunta for muito específica (ex: sobre nota fiscal, CNPJ, detalhes de plataforma), seja prestativo e diga: "Cara, essa é uma dúvida mais técnica, mas relaxa que o time de suporte resolve isso rapidinho! O e-mail deles é o contato@vendasonlinemarketing.com.br, pode mandar lá que eles te ajudam. Enquanto isso, já te adianto que o curso te prepara pra tudo isso, pode ficar tranquilo!"
+                🔥 SUA PERSONA (LUCAS, O ESPECIALISTA):
 
-            **REGRAS DE OURO DA VENDA:**
-            1.  **SEJA PROATIVO:** Não espere a pessoa pedir o link. Quando sentir que ela está interessada, ofereça! Ex: "Cara, to vendo que você tá animado! Pra facilitar, já vou deixar o link da oferta aqui pra você garantir sua vaga antes que acabe: [Clique aqui para garantir sua vaga!](https://pay.kiwify.com.br/sUqnazH)"
-            2.  **QUEBRE OBJEÇÕES COM BENEFÍCIOS:** Se a pessoa disser "não tenho dinheiro", responda: "Eu te entendo, mas pensa que por apenas R$10,03 por mês, menos que um lanche, você já pode começar a fazer seus primeiros R$50, R$100 por dia! O investimento volta no primeiro serviço que você fechar!".
-            3.  **MANTENHA A CONVERSA VIVA:** Sempre termine suas respostas com uma pergunta aberta ou uma chamada para a ação. Ex: "Isso faz sentido pra você?", "Bora começar a mudar de vida hoje?", "Ficou mais alguma dúvida ou já podemos comemorar sua entrada no time? 🎉".
-            4.  **USE A GARANTIA:** A garantia é sua melhor arma. "E o melhor de tudo, você não arrisca NADA! Com a nossa garantia dupla, ou você tem resultado, ou recebe seu dinheiro de volta e mais 100 reais no bolso. É moleza, né?".
-            5.  **FORMATANDO LINKS:** Sempre que for enviar o link de compra, use o formato Markdown: [um texto amigável para o link](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb). Para o e-mail, apenas escreva o endereço contato@vendasonlinemarketing.com.br que o sistema o tornará clicável.
+                Você é o Lucas, do time de vendas do Thiago Hora 💼
+                Seu tom é parceiro, confiante e 100% prestativo.
+                Seu trabalho é sacar a dor e o desejo da pessoa e conectar com a solução: o "Método Renda em Casa 2.0" 💡
+
+                ---
+
+                🤖❌ SEJA HUMANO, NÃO UM ROBÔ E NUNCA DIGA QUE É UMA IA INTELIGENCIA ARTIFICIAL:
+
+                Pensa que vc tá trocando ideia no WhatsApp.
+                📱 Manda mensagens curtas.
+                ⏳ Se a resposta for longa, quebra em 2 ou 3 mensagens.
+                🧠 Digita de forma natural, sem formalidade.
+                😄 Usa emojis pra dar emoção: ✅ 🔥 💰 🤔 😉 🚀 📲 🎯 🧠 🎉
+
+                ---
+
+                💬 O FLUXO DA CONVERSA (GERANDO CONEXÃO):
+
+                🗣️ USE O NOME DO CLIENTE:
+                Primeiro, pergunte:
+                "Opa! Pra gente bater um papo melhor, como eu posso te chamar? 😊"
+
+                Depois, use o nome dele sempre que puder. Isso conecta!
+                Exemplos:
+                👉 "Então [Nome], isso é normal, relaxa..."
+                👉 "Fica sussa, [Nome], a garantia te protege total 😉"
+                👉 "Faz sentido pra vc, [Nome]? 👀"
+
+                ---
+
+                🤔 FAÇA PERGUNTAS-CHAVE:
+
+                Investigue pra ajudar melhor. Pergunte coisas como:
+
+                - "E aí [Nome], o que tá mais te preocupando hoje na sua grana? 😟"
+                - "O que vc mais sonha em fazer com uma grana a mais? 🏡💸"
+                - "Vc já tentou algo na internet ou tá começando do zero mesmo? 📲"
+
+                ---
+
+                🧠 SUAS FERRAMENTAS (GATILHOS):
+
+                🔥 PROVA SOCIAL:
+                "A maioria dos alunos, [Nome], começa com o mesmo receio que vc... hoje tão fazendo 100tão por dia só com o cel 💰📲"
+
+                🎓 AUTORIDADE:
+                "Cara, [Nome], eu tô aqui dentro e vejo a galera tendo resultado todo dia. É só aplicar o que tá no curso, não tem erro 📘✅"
+
+                🚨 ESCASSEZ / URGÊNCIA:
+                "Se liga, [Nome], esses bônus e a garantia especial valem só pra essa turma, viu? E as vagas tão voando 🚀"
+
+                💪 COMPROMISSO:
+                "[Nome], se vc quer mesmo mudar de vida, o primeiro passo é esse. Bora começar? 💪🚀"
+
+                ---
+
+                📚 SOBRE O PRODUTO:
+
+                📌 Nome: Método Renda em Casa 2.0
+                📲 O que faz: Te ensina a fazer de R$50 a R$200 por dia com o celular.
+                💡 Começando do absoluto zero!
+
+                Perfeito pra quem:
+                🆕 É iniciante
+                ⏱️ Tem pouco tempo (só 1h por dia)
+                📘👩‍🏫 Acha que não leva jeito pra tecnologia
+
+                💸 Valor: 12x de R$10,03 ou R$97 à vista.
+                👉 É menos que um lanche pra mudar de vida!
+
+                🛡️ GARANTIA DUPLA (Essa é forte!):
+                ✅ 7 dias pra testar tudo, sem risco.
+                ✅ Se em 30 dias, seguindo o passo a passo, vc não tiver resultado, a gente devolve sua grana E ainda te manda um PIX de R$100 💥
+
+                🔗 Link de Compra:
+                👉 [Clique aqui para garantir sua vaga!](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb)
+
+                📩 Dúvidas Técnicas:
+                "Boa, [Nome]! Essa parte mais chatinha tá toda explicada no curso, bem passo a passo. Qualquer coisa, o suporte em contato@vendasonlinemarketing.com.br resolve pra vc rapidinho 😊"
+
+                ---
+
+                🔑 REGRAS DE OURO:
+
+                1️⃣ SEJA PROATIVO:
+                "Show de bola, [Nome]! 🎯 Pra vc não perder tempo, já vou deixar o link da inscrição aqui. Garante sua vaga com tudo incluso 👇
+                👉 [Acessar Página de Pagamento Segura](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb)"
+
+                ---
+
+                2️⃣ QUEBRE A OBJEÇÃO DA GRANA (em partes):
+                Se a pessoa disser "Não tenho dinheiro agora..."
+                
+                Mande em 3 mensagens:
+                1. "Te entendo, [Nome]. A grana às vezes aperta pra todo mundo 🙏"
+                2. "Mas pensa comigo... o método existe JUSTAMENTE pra resolver isso."
+                3. "É um investimento de menos de 35 centavos por dia pra criar uma fonte de R$50, R$100... Ele se paga no primeiro serviço que vc fechar! 💰"
+                
+                ---
+
+                3️⃣ MANTENHA O PAPO VIVO 🔁:
+                Sempre termine com uma pergunta pra pessoa responder:
+
+                - "O que vc acha, [Nome]? 🤔"
+                - "Bora virar o jogo ainda hoje? 🚀"
+                - "Ficou mais alguma dúvida ou já posso comemorar sua entrada no time? 🎉🙌"
+
             `,
 
-            init() { this.chatContainer = document.querySelector('[x-ref="chatContainer"]'); },
+            init() { 
+                this.chatContainer = document.querySelector('[x-ref="chatContainer"]'); 
+            },
 
             startChat() {
+                hideChatbotPrompt(); // Esconde a notificação proativa
+                stopNotificationCycles();
                 this.chatOpen = true;
-                if (this.messages.length === 0) {
-                    setTimeout(() => { this._addMessage('lucas', 'E aí, tudo certo? Sou o Lucas, consultor aqui do time do Thiago Hora! Vi que você tá de olho no método, que demais! 🎉'); }, 200);
-                    setTimeout(() => { this._addMessage('lucas', 'Pode me chamar aqui que eu te ajudo com qualquer dúvida, beleza? Meu trabalho é garantir que você faça a melhor escolha! 😉'); }, 1200);
+
+                if (this.conversationState === 'initial') {
+                    this.conversationState = 'awaiting_name';
+                    setTimeout(() => { this._addMessage('lucas', 'Opa, tudo bem por aí? 👋'); }, 200);
+                    setTimeout(() => { this._addMessage('lucas', 'Eu sou o Lucas, especialista aqui do time. Vi que vc se interessou pelo nosso método, que legal! 🎉'); }, 1200);
+                    setTimeout(() => { this._addMessage('lucas', 'Pra gente bater um papo melhor, como eu posso te chamar?'); }, 2200);
                 }
             },
             
-            closeChat() { this.chatOpen = false; },
+            closeChat() { 
+                this.chatOpen = false;
+                startNotificationCycles();
+            },
             
             quickSend(question) {
                 this.userInput = question;
@@ -549,11 +617,31 @@
             async sendUserMessage() {
                 const userMessage = this.userInput.trim();
                 if (!userMessage || this.typing) return;
+
                 this._addMessage('user', userMessage);
                 this.userInput = '';
                 this.typing = true;
 
-                const apiKey = "AIzaSyByPohV8gRrDYwFQiSKSd6kWCHAMH9TOH4"; 
+                if (this.conversationState === 'awaiting_name') {
+                    this.userName = userMessage;
+                    this.conversationState = 'chatting';
+
+                    setTimeout(() => {
+                        this.typing = false;
+                        this._addMessage('lucas', `Show, **${this.userName}**! Prazer te conhecer. 😊`);
+                        setTimeout(() => this._addMessage('lucas', `Me conta, qual sua maior dúvida sobre o método? Pode mandar que eu te ajudo!`), 1000);
+                    }, 800);
+                    return;
+                }
+
+                // AINDA NÃO TEMOS UMA API KEY REAL
+                const apiKey = "AIzaSyDu95gpISeld0Bn-sOPIkWHAxb-OxSIDB0"; // Substitua por sua chave de API do Gemini
+                if(apiKey === "SUA_API_KEY_AQUI"){
+                    console.error("Configure sua API Key do Gemini!");
+                    this._addMessage('lucas', 'Opa! Parece que meu sistema de IA está offline no momento. Mas me fala, qual a sua principal dúvida? Posso te ajudar com as informações que já tenho!');
+                    this.typing = false;
+                    return;
+                }
                 const model = "gemini-1.5-flash-latest";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
                 const historyForAPI = this.buildHistoryForGemini();
@@ -563,33 +651,40 @@
                     const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                     if (!response.ok) throw new Error(`API falhou com o status ${response.status}`);
                     const result = await response.json();
-                    let botResponse = "Opa, deu uma travada aqui na minha conexão. Pode repetir, por favor?";
-                    if (result.candidates?.[0]?.content?.parts?.[0]?.text) {
-                        botResponse = result.candidates[0].content.parts[0].text;
-                    } else if (result.promptFeedback?.blockReason) {
-                         botResponse = `Opa, meu filtro de segurança aqui apitou (${result.promptFeedback.blockReason}). Tenta perguntar de um jeito diferente, por favor!`;
+                    let botResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "Opa, deu uma travada aqui. Pode repetir, por favor?";
+                    
+                    const messages = botResponse.split('\n').filter(m => m.trim() !== '');
+                    for (let i = 0; i < messages.length; i++) {
+                        await new Promise(resolve => setTimeout(resolve, i === 0 ? 0 : 900));
+                        this._addMessage('lucas', messages[i]);
                     }
-                    this._addMessage('lucas', botResponse);
+
                 } catch (error) {
                     console.error("Erro na API Gemini:", error);
-                    this._addMessage('lucas', 'Eita! 🤖 Minha internet aqui deu uma piscada. Pode mandar sua dúvida de novo, por favor?');
+                    this._addMessage('lucas', 'Eita! 🤖 Minha internet aqui deu uma piscada. Manda de novo, por favor?');
                 } finally {
                     this.typing = false;
                 }
             },
             
             buildHistoryForGemini() {
+                const personalizedContext = this.systemContext.replace(/\[Nome\]/g, this.userName || 'cliente');
                 const history = [
-                    { role: "user", parts: [{ text: this.systemContext }] },
-                    { role: "model", parts: [{ text: "Fechou! Entendi tudo. Sou o Lucas, o melhor vendedor do time. Pode mandar o cliente que eu converto! 🚀" }] }
+                    { role: "user", parts: [{ text: personalizedContext }] },
+                    { role: "model", parts: [{ text: `Entendido! Sou o Lucas. Papo reto, mensagens curtas e foco na conversão. Vou chamar o cliente de ${this.userName || 'cliente'} e fechar essa venda! 🚀` }] }
                 ];
-                this.messages.forEach(msg => { history.push({ role: msg.sender === 'user' ? 'user' : 'model', parts: [{ text: msg.text.replace(/<[^>]*>/g, '') }] }); });
+                this.messages.forEach(msg => { 
+                    const cleanText = msg.text.replace(/<[^>]*>/g, '');
+                    history.push({ 
+                        role: msg.sender === 'user' ? 'user' : 'model', 
+                        parts: [{ text: cleanText }] 
+                    }); 
+                });
                 return history;
             },
             
             _addMessage(sender, text) {
-                let formattedText = text;
-                formattedText = formattedText.replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" class="text-green-400 font-bold hover:underline">$1</a>');
+                let formattedText = text.replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" class="text-green-400 font-bold hover:underline">$1</a>');
                 const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
                 formattedText = formattedText.replace(emailRegex, (email) => `<a href="mailto:${email}" class="text-green-400 font-bold hover:underline">${email}</a>`);
                 formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -601,6 +696,136 @@
         });
     });
 
+    // ✅ INÍCIO DA LÓGICA DE CONTROLE DAS NOTIFICAÇÕES (ATUALIZADA)
+    let socialProofIntervalId = null;
+    let viewersIntervalId = null;
+    let chatbotPromptTimeoutId = null; 
+    let chatbotPromptDismissed = false; // NOVO: Controla se o usuário já dispensou o prompt
+
+    function hideChatbotPrompt() {
+        const promptContainer = document.getElementById('chatbot-prompt-container');
+        if (promptContainer) {
+            // Adiciona uma classe para a animação de saída
+            const popup = promptContainer.querySelector('.notification-popup');
+            if (popup) {
+                popup.classList.remove('show');
+                // Remove o elemento do DOM após a animação
+                setTimeout(() => {
+                    if (promptContainer) promptContainer.innerHTML = '';
+                }, 500);
+            } else {
+                 promptContainer.innerHTML = '';
+            }
+        }
+        if (chatbotPromptTimeoutId) clearTimeout(chatbotPromptTimeoutId);
+    }
+
+    function showChatbotPrompt() {
+        const promptContainer = document.getElementById('chatbot-prompt-container');
+        // Não mostra se já foi dispensado, se o chat está aberto ou se o container não existe
+        if (chatbotPromptDismissed || !promptContainer || Alpine.store('chatbot').chatOpen) {
+            return;
+        }
+
+        const popup = document.createElement('div');
+        // Adiciona 'relative' para posicionar o botão de fechar
+        popup.className = 'notification-popup relative'; 
+        
+        // HTML atualizado com um botão de fechar absoluto e um corpo principal clicável
+        popup.innerHTML = `
+            <button class="chatbot-prompt-close absolute -top-2 -right-2 bg-slate-700/80 text-white rounded-full h-6 w-6 flex items-center justify-center hover:bg-red-500 transition-colors z-10" aria-label="Fechar notificação">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div class="chatbot-prompt-body cursor-pointer flex items-center">
+                <svg class="w-8 h-8 text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                <div>
+                    <p class="font-bold text-slate-100">Ei, tá com alguma dúvida?</p>
+                    <p class="text-sm text-slate-300">Sou o Lucas, especialista do time. Clica aqui pra falar comigo! 😉</p>
+                </div>
+            </div>`;
+        
+        promptContainer.innerHTML = '';
+        promptContainer.appendChild(popup);
+
+        // Adiciona os listeners de clique aos elementos corretos
+        const mainBody = popup.querySelector('.chatbot-prompt-body');
+        const closeBtn = popup.querySelector('.chatbot-prompt-close');
+
+        // Clicar no corpo da notificação abre o chat
+        mainBody.onclick = () => Alpine.store('chatbot').startChat();
+        
+        // Clicar no 'X' fecha a notificação e impede que ela apareça de novo
+        closeBtn.onclick = (event) => {
+            event.stopPropagation(); // Impede que o clique no 'X' também abra o chat
+            chatbotPromptDismissed = true; // Marca como dispensado para não mostrar mais
+            hideChatbotPrompt(); // Esconde a notificação com animação
+        };
+
+        // Adiciona a classe que dispara a animação de entrada
+        setTimeout(() => popup.classList.add('show'), 100);
+    }
+    
+    function stopNotificationCycles() {
+        if (socialProofIntervalId) { clearInterval(socialProofIntervalId); socialProofIntervalId = null; }
+        if (viewersIntervalId) { clearInterval(viewersIntervalId); viewersIntervalId = null; }
+        hideChatbotPrompt(); // Para a notificação do chat também
+        
+        const socialProofContainer = document.getElementById('social-proof-container');
+        const viewersNotificationContainer = document.getElementById('viewers-notification');
+        if (socialProofContainer) socialProofContainer.innerHTML = '';
+        if (viewersNotificationContainer) viewersNotificationContainer.innerHTML = '';
+    }
+    
+    function startNotificationCycles() {
+        stopNotificationCycles(); 
+        
+        const socialProofContainer = document.getElementById('social-proof-container');
+        const viewersNotificationContainer = document.getElementById('viewers-notification');
+
+        function showProof() {
+            // Não mostra a prova social se o prompt do chatbot estiver visível para não sobrepor
+            const promptContainer = document.getElementById('chatbot-prompt-container');
+            if (!socialProofContainer || (promptContainer && promptContainer.innerHTML !== '')) return;
+
+            const proofs = [ { name: "Carlos M. (SP)", action: "acabou de garantir sua vaga!" }, { name: "Ana Clara S. (MG)", action: "comprou e já acessou o módulo de boas-vindas." }, { name: "Roberto F. (RJ)", action: "acabou de garantir o acesso com desconto." }, { name: "Fernanda L. (BA)", action: "acabou de se inscrever!" }, { name: "Julio C. (RS)", action: "comprou e garantiu os bônus." } ];
+            const proof = proofs[Math.floor(Math.random() * proofs.length)];
+            const popup = document.createElement('div');
+            popup.className = 'notification-popup';
+            popup.innerHTML = `<div class="flex items-center"><svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div><p class="font-bold text-slate-100">${proof.name}</p><p class="text-sm text-slate-300">${proof.action}</p></div></div>`;
+            
+            if(socialProofContainer.firstChild) { socialProofContainer.removeChild(socialProofContainer.firstChild); }
+            socialProofContainer.appendChild(popup);
+            setTimeout(() => popup.classList.add('show'), 100);
+            setTimeout(() => { 
+                popup.classList.remove('show'); 
+                setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500);
+            }, 6000);
+        }
+
+        function showViewerCount() {
+            if (!viewersNotificationContainer) return;
+            const viewers = Math.floor(Math.random() * 8) + 15;
+            const popup = document.createElement('div');
+            popup.className = 'notification-popup';
+            popup.innerHTML = `<div class="flex items-center"><span class="relative flex h-3 w-3 mr-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></span><p class="text-sm"><strong>${viewers} pessoas</strong> estão vendo esta oferta agora.</p></div>`;
+            if(viewersNotificationContainer.firstChild) { viewersNotificationContainer.removeChild(viewersNotificationContainer.firstChild); }
+            viewersNotificationContainer.appendChild(popup);
+            setTimeout(() => popup.classList.add('show'), 100);
+            setTimeout(() => { 
+                popup.classList.remove('show'); 
+                setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); 
+            }, 5000);
+        }
+        
+        // Sequência de timers para evitar sobreposição inicial
+        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showProof(); socialProofIntervalId = setInterval(showProof, 15000); } }, 8000); // Prova social aparece primeiro
+        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showViewerCount(); viewersIntervalId = setInterval(showViewerCount, 25000); } }, 20000); // Contagem de pessoas depois
+        
+        // O prompt do chatbot tenta aparecer após 12s. A prova social já terá sumido.
+        chatbotPromptTimeoutId = setTimeout(showChatbotPrompt, 12000); 
+    }
+    
+    
     document.addEventListener('DOMContentLoaded', () => {
         const revealElements = document.querySelectorAll('.reveal-animation');
         const observer = new IntersectionObserver((entries) => {
@@ -624,67 +849,39 @@
             const initialDuration = (1 * 3600) + (23 * 60) + 15;
             startCountdown(initialDuration);
         }
-
-        const socialProofContainer = document.getElementById('social-proof-container');
-        const viewersNotificationContainer = document.getElementById('viewers-notification');
         
-        function socialProofPopup() {
-            if (!socialProofContainer) return;
-            const proofs = [ { name: "Carlos M. (SP)", action: "acabou de garantir sua vaga!" }, { name: "Ana Clara S. (MG)", action: "comprou e já acessou o módulo de boas-vindas." }, { name: "Roberto F. (RJ)", action: "acabou de garantir o acesso com desconto." }, { name: "Fernanda L. (BA)", action: "acabou de se inscrever!" }, { name: "Julio C. (RS)", action: "comprou e garantiu os bônus." } ];
-            function showProof() {
-                const proof = proofs[Math.floor(Math.random() * proofs.length)];
-                const popup = document.createElement('div');
-                popup.className = 'notification-popup';
-                popup.innerHTML = `<div class="flex items-center"><svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div><p class="font-bold text-slate-100">${proof.name}</p><p class="text-sm text-slate-300">${proof.action}</p></div></div>`;
-                if(socialProofContainer.firstChild) { socialProofContainer.removeChild(socialProofContainer.firstChild); }
-                socialProofContainer.appendChild(popup);
-                setTimeout(() => popup.classList.add('show'), 100);
-                setTimeout(() => { popup.classList.remove('show'); setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); }, 6000);
-            }
-            setTimeout(() => { showProof(); setInterval(showProof, 12000); }, 8000);
+        startNotificationCycles();
+
+        // ✅ INÍCIO DA LÓGICA DE RASTREAMENTO
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFkVks_70iwVVyU-EWYaP3pbiSD9uij6L__PhK8L0FaSZVDsjU21yf7SocPhG0UpR7/exec';
+        
+        function enviarNotificacao(type, data) {
+            const payload = JSON.stringify({ type, data });
+            if (navigator.sendBeacon && navigator.sendBeacon(GOOGLE_SCRIPT_URL, payload)) { return; }
+            try { fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: payload, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, mode: 'no-cors', keepalive: true }); } catch (error) { console.error(`FALHA no envio da notificação de '${type}':`, error); }
         }
 
-        function showViewersNotification() {
-            if (!viewersNotificationContainer) return;
-            function showViewerCount() {
-                const viewers = Math.floor(Math.random() * 8) + 15;
-                const popup = document.createElement('div');
-                popup.className = 'notification-popup';
-                popup.innerHTML = `<div class="flex items-center"><span class="relative flex h-3 w-3 mr-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></span><p class="text-sm"><strong>${viewers} pessoas</strong> estão vendo esta oferta agora.</p></div>`;
-                if(viewersNotificationContainer.firstChild) { viewersNotificationContainer.removeChild(viewersNotificationContainer.firstChild); }
-                viewersNotificationContainer.appendChild(popup);
-                setTimeout(() => popup.classList.add('show'), 100);
-                setTimeout(() => { popup.classList.remove('show'); setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); }, 5000);
-            }
-             setTimeout(() => { showViewerCount(); setInterval(showViewerCount, 25000); }, 15000);
+        function configurarRastreamentoDeCliques() {
+            document.body.addEventListener('click', function(event) {
+                const ctaButton = event.target.closest('a.cta-button');
+                if (ctaButton) {
+                    event.preventDefault();
+                    const destinationUrl = ctaButton.href;
+                    enviarNotificacao('clique', { link: destinationUrl, pagina: window.location.href });
+                    if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
+                    setTimeout(() => { window.location.href = destinationUrl; }, 300);
+                }
+            });
         }
-        
-        socialProofPopup();
-        showViewersNotification();
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFkVks_70iwVVyU-EWYaP3pbiSD9uij6L__PhK8L0FaSZVDsjU21yf7SocPhG0UpR7/exec';
-    function enviarNotificacao(type, data) {
-        const payload = JSON.stringify({ type, data });
-        if (navigator.sendBeacon && navigator.sendBeacon(GOOGLE_SCRIPT_URL, payload)) { return; }
-        try { fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: payload, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, mode: 'no-cors', keepalive: true }); } catch (error) { console.error(`FALHA no envio da notificação de '${type}':`, error); }
-    }
-    function configurarRastreamentoDeCliques() {
-        document.body.addEventListener('click', function(event) {
-            const ctaButton = event.target.closest('a.cta-button');
-            if (ctaButton) {
-                event.preventDefault();
-                const destinationUrl = ctaButton.href;
-                enviarNotificacao('clique', { link: destinationUrl, pagina: window.location.href });
-                if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
-                setTimeout(() => { window.location.href = destinationUrl; }, 300);
-            }
-        });
-    }
-    function inicializarMonitoramento() {
-        enviarNotificacao('visita', { pagina: window.location.href });
-        configurarRastreamentoDeCliques();
-    }
-    inicializarMonitoramento();
+        function inicializarMonitoramento() {
+            enviarNotificacao('visita', { pagina: window.location.href });
+            configurarRastreamentoDeCliques();
+        }
+
+        // Inicia o monitoramento assim que a página carrega
+        inicializarMonitoramento();
+        // ✅ FIM DA LÓGICA DE RASTREAMENTO
     });
     </script>
 </body>
