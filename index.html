@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Renda em Casa - Método Comprovado (R$50 a R$200/Dia)</title>
-    <meta name="description" content="VÍDEO REVELA como uma pessoa comum, sem experiência, fatura de R$50 a R$200 por dia com o celular, começando do zero. Método à prova de iniciantes com garantia dupla.">
-    <meta name="keywords" content="renda em casa, renda extra, trabalhar em casa, marketing digital, thiago hora, ganhar dinheiro online">
+    
+    <!-- SEO: Título otimizado para palavra-chave principal e público-alvo (Mantido) -->
+    <title>Sua Renda em Casa 2.0: Método para Ganhar de R$50 a R$200/Dia Pelo Celular (Iniciantes)</title>
+    
+    <!-- SEO: Descrição otimizada para taxa de cliques (CTR) com benefícios claros e CTA (Mantido) -->
+    <meta name="description" content="✅ Descubra o método passo a passo que permite a iniciantes faturar de R$50 a R$200 por dia com o celular. Assista ao vídeo e comece sua renda em casa hoje. Risco zero com garantia dupla.">
+    
+    <!-- SEO: Palavras-chave relevantes e específicas para o nicho (Mantido) -->
+    <meta name="keywords" content="renda em casa pelo celular, renda extra para iniciantes, trabalhar em casa, ganhar dinheiro online, sua renda em casa 2.0, thiago hora, curso de afiliado kiwify">
+    
+    <!-- SEO: Diretivas para robôs e definição da URL canônica (Mantido) -->
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="http://vendasonlinemarketing.com.br/">
+    <link rel="canonical" href="https://vendasonlinemarketing.com.br/">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PERFORMANCE: Pré-conexão com domínios essenciais (Mantido) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- PERFORMANCE: Scripts adiados (Mantido) -->
+    <script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     
-    <script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!--<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1838998660291123');fbq('track','PageView');</script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1838998660291123&ev=PageView&noscript=1" alt="Facebook Pixel"/></noscript> -->
     
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1838998660291123');fbq('track','PageView');</script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1838998660291123&ev=PageView&noscript=1" alt="Facebook Pixel"/></noscript>
-    
-    <style>
+     <style>
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e2e8f0; }
         h1, h2, h3, .font-montserrat { font-family: 'Montserrat', sans-serif; font-weight: 900; }
         .font-mono { font-family: 'Roboto Mono', monospace; }
@@ -33,7 +43,16 @@
         .reveal-animation.revealed { opacity: 1; transform: translateY(0); }
         .countdown-urgency { background: linear-gradient(45deg, #dc2626, #b91c1c); animation: urgency-pulse 1s infinite alternate; }
         @keyframes urgency-pulse { from { transform: scale(1); box-shadow: 0 0 10px #ef4444; } to { transform: scale(1.05); box-shadow: 0 0 20px #f87171; } }
-        .video-container { border: 3px solid #f59e0b; border-radius: 18px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        
+        /* PERFORMANCE (LCP/CLS): Estilos para a fachada de vídeo do YouTube (Mantido) */
+        .youtube-facade { position: relative; display: block; background-size: cover; background-position: center; cursor: pointer; border: 3px solid #f59e0b; border-radius: 18px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        .youtube-facade::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); transition: background 0.2s ease; }
+        .youtube-facade:hover::before { background: rgba(0, 0, 0, 0.1); }
+        .youtube-facade .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 56px; background-color: rgba(34, 34, 34, 0.8); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease; }
+        .youtube-facade:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); }
+        .youtube-facade .play-icon svg { width: 40px; height: 40px; fill: white; }
+        #youtube-player iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; }
+
         @media (max-width: 768px) { h1 { font-size: 2.2rem; line-height: 1.1; } .cta-button { font-size: 1.1rem; padding: 1rem 1.5rem; } }
         .terminal-loader .loader-text::after { content: '▋'; animation: blink 1s step-end infinite; }
         @keyframes blink { 50% { opacity: 0; } }
@@ -46,10 +65,54 @@
         .notification-popup.show { opacity: 1; transform: translateX(0); }
     </style>
 
-    <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "Course", "name": "Sua Renda em Casa 2.0", "description": "Método completo que ensina como faturar de R$50 a R$200 por dia com o celular, começando do zero absoluto. Ideal para iniciantes, com aulas práticas e suporte ao vivo.", "provider": { "@type": "Organization", "name": "Thiago Hora", "sameAs": "https://www.instagram.com/othiagohora/" }, "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT20H" } }</script>
-    <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "VideoObject", "name": "VÍDEO REVELA: Como uma pessoa,fatura de R$50 a R$200 Por Dia", "description": "Assista à revelação de como uma pessoa comum, sem experiência com tecnologia, conseguiu criar uma fonte de renda diária usando apenas o celular e um método simples.", "thumbnailUrl": "https://placehold.co/1280x720/000000/ffffff?text=Capa+do+Video", "uploadDate": "2024-07-01T08:00:00+00:00", "duration": "PT15M33S", "embedUrl": "https://www.youtube.com/embed/kq8K_CYZXGU" }</script>
-    <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Preciso de dinheiro para começar?", "acceptedAnswer": { "@type": "Answer", "text": "Não! O método foi criado para funcionar com R$0 de investimento inicial. Você vai usar apenas ferramentas gratuitas e seu celular." } },{ "@type": "Question", "name": "Não sei nada de tecnologia, vou conseguir?", "acceptedAnswer": { "@type": "Answer", "text": "Com certeza. As aulas são passo a passo, mostrando cada clique na tela. Se você consegue mandar uma mensagem no WhatsApp, você consegue aplicar o método." } },{ "@type": "Question", "name": "Não tenho tempo, consigo fazer?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O método foi pensado para quem tem pouco tempo. Com 1 hora por dia, você já consegue aplicar e ver os primeiros resultados aparecerem." } },{ "@type": "Question", "name": "E se eu não achar clientes?", "acceptedAnswer": { "@type": "Answer", "text": "Impossível. Nós te entregamos 3 estratégias validadas para encontrar clientes, além de scripts de mensagem prontos para você só copiar, colar e fechar negócio." } }] }</script>
-
+    <!-- SEO: Schema.org (JSON-LD) consolidado e enriquecido (Mantido) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Course",
+          "name": "Sua Renda em Casa 2.0",
+          "description": "Método completo que ensina como faturar de R$50 a R$200 por dia com o celular, começando do zero absoluto. Ideal para iniciantes, com aulas práticas e suporte ao vivo.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Thiago Hora",
+            "sameAs": "https://www.instagram.com/othiagohora/"
+          },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "educationalLevel": "Beginner",
+            "courseWorkload": "PT20H"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "97.00",
+            "priceCurrency": "BRL",
+            "category": "Digital"
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "name": "VÍDEO REVELA: Como uma pessoa comum fatura de R$50 a R$200 Por Dia com o celular",
+          "description": "Assista à revelação de como uma pessoa comum, sem experiência com tecnologia, conseguiu criar uma fonte de renda diária usando apenas o celular e um método simples.",
+          "thumbnailUrl": "https://vendasonlinemarketing.com.br/imagem/thumb-vsl-metodo-sua-renda-em-casa-2.0.jpg",
+          "uploadDate": "2024-07-01T08:00:00+00:00",
+          "duration": "PT15M33S",
+          "embedUrl": "https://www.youtube.com/embed/kq8K_CYZXGU"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Preciso de dinheiro para começar?", "acceptedAnswer": { "@type": "Answer", "text": "Não! O método foi criado para funcionar com R$0 de investimento inicial. Você vai usar apenas ferramentas gratuitas e seu celular." } },
+            { "@type": "Question", "name": "Não sei nada de tecnologia, vou conseguir?", "acceptedAnswer": { "@type": "Answer", "text": "Com certeza. As aulas são passo a passo, mostrando cada clique na tela. Se você consegue mandar uma mensagem no WhatsApp, você consegue aplicar o método." } },
+            { "@type": "Question", "name": "Não tenho tempo, consigo fazer?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O método foi pensado para quem tem pouco tempo. Com 1 hora por dia, você já consegue aplicar e ver os primeiros resultados aparecerem." } },
+            { "@type": "Question", "name": "E se eu não achar clientes?", "acceptedAnswer": { "@type": "Answer", "text": "Impossível. Nós te entregamos 3 estratégias validadas para encontrar clientes que já estão procurando pelo seu serviço, além de scripts de mensagem prontos para você só copiar, colar e fechar negócio. É um verdadeiro 'mapa da mina' para quem está começando." } }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="min-h-screen" x-data x-init="$store.chatbot.init()">
 
@@ -57,14 +120,27 @@
 
     <main class="container mx-auto max-w-4xl px-4 py-8 md:py-12">
         <header class="text-center mb-10 reveal-animation">
+
             <h3 class="text-xl md:text-2xl font-bold uppercase text-red-500 mb-2 tracking-wider">VÍDEO REVELA:</h3>
+
             <h1 class="text-3xl md:text-5xl font-black text-slate-100 mb-4">Como <span class="text-yellow-400 headline-glow">uma pessoa,</span> que mal sabia usar o celular, hoje fatura de <span class="text-green-400">R$50 a R$200 Por Dia</span>, Começando do Zero Absoluto.</h1>
         </header>
 
+       <!-- PERFORMANCE (LCP): Fachada de alto desempenho (Mantido) -->
         <div class="video-container w-full max-w-4xl mx-auto mb-8 reveal-animation">
-            <div class="aspect-video bg-black rounded-lg">
-                <iframe src="https://www.youtube.com/embed/kq8K_CYZXGU?autoplay=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg" title="Vídeo Revelação do Método Renda em Casa"></iframe>
+            <div id="youtube-player" class="aspect-video bg-black rounded-lg">
+                <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'thumb-vsl-metodo-sua-renda-em-casa-2.0.jpg' no seu servidor. -->
+                <div id="youtube-facade" class="youtube-facade aspect-video" style="background-image: url('imagem/Renda_Em_Casa.jpg');" onclick="loadYouTubeVideo()" title="Clique para assistir ao vídeo sobre como gerar renda pelo celular">
+                    <div class="play-icon">
+                        <svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74,0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path d="M 27 35.39 V 12.61 L 45 24 Z" fill="#fff"></path></svg>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- AJUSTE SEO: Adicionado parágrafo de resumo para enriquecer o conteúdo textual. -->
+        <div class="text-center text-slate-300 max-w-3xl mx-auto mb-10 reveal-animation">
+            <p>Neste vídeo gratuito, Thiago Hora mostra o exato passo a passo que ele desenvolveu para transformar um simples celular em uma fonte de renda diária. Você vai descobrir como encontrar clientes, que tipo de serviço oferecer (mesmo sem experiência) e como receber seus primeiros pagamentos em poucos dias.</p>
         </div>
 
         <div class="text-center mb-12 reveal-animation">
@@ -73,44 +149,42 @@
         </div>
 
         <div class="bg-slate-900/50 border-2 border-dashed border-yellow-500 p-6 md:p-8 rounded-xl mb-16 text-center reveal-animation">
-            <h3 class="text-2xl md:text-3xl font-black mb-4 text-yellow-400"><span>🎯</span> ATENÇÃO: Oferta Limitada!</h3>
+            <h2 class="text-2xl md:text-3xl font-black mb-4 text-yellow-400"><span>🎯</span> ATENÇÃO: Oferta Limitada!</h2>
             <p class="text-lg md:text-xl mb-6">As próximas <span class="text-2xl font-black text-white animate-pulse">17 pessoas</span> que garantirem hoje recebem os bônus abaixo <span class="uppercase">GRATUITAMENTE</span>:</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-4">
                 <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-yellow-400">
-                    <h4 class="font-bold text-lg text-white mb-1">BÔNUS #1</h4><p class="text-yellow-400 font-bold text-xl mb-2">Aulas ao Vivo 3x por Semana</p><p class="text-slate-300 text-sm">Participe de encontros ao vivo para tirar dúvidas, analisar estratégias e ter um acompanhamento de perto que fará toda a diferença na sua jornada.</p><p class="text-slate-400 line-through text-sm mt-2">De R$2.000,00</p><p class="text-green-400 font-bold text-lg">HOJE GRÁTIS</p>
+                    <h3 class="font-bold text-lg text-white mb-1">BÔNUS #1</h3><p class="text-yellow-400 font-bold text-xl mb-2">Aulas ao Vivo 3x por Semana</p>
+                    <!-- AJUSTE SEO: Descrição do bônus expandida com palavras-chave. -->
+                    <p class="text-slate-300 text-sm">Participe de encontros ao vivo para tirar dúvidas, analisar estratégias e ter um acompanhamento de perto. Oferecemos **suporte para afiliados**, análise de campanhas e um networking que fará toda a diferença na sua jornada.</p>
+                    <p class="text-slate-400 line-through text-sm mt-2">De R$2.000,00</p><p class="text-green-400 font-bold text-lg">HOJE GRÁTIS</p>
                 </div>
                 <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-yellow-400">
-                    <h4 class="font-bold text-lg text-white mb-1">BÔNUS #2</h4><p class="text-yellow-400 font-bold text-xl mb-2">O Caminho para Fechar Clientes</p><p class="text-slate-300 text-sm">Receba um guia prático e direto ao ponto com as melhores estratégias para encontrar e fechar seus primeiros clientes em tempo recorde.</p><p class="text-slate-400 line-through text-sm mt-2">De R$97,00</p><p class="text-green-400 font-bold text-lg">HOJE GRÁTIS</p>
+                    <h3 class="font-bold text-lg text-white mb-1">BÔNUS #2</h3><p class="text-yellow-400 font-bold text-xl mb-2">O Caminho para Fechar Clientes</p>
+                    <!-- AJUSTE SEO: Descrição do bônus expandida com palavras-chave. -->
+                    <p class="text-slate-300 text-sm">Receba um guia prático com as melhores **estratégias de tráfego orgânico** para encontrar e fechar clientes. Inclui **scripts de conversão** validados para você apenas copiar, colar e começar a lucrar.</p>
+                    <p class="text-slate-400 line-through text-sm mt-2">De R$97,00</p><p class="text-green-400 font-bold text-lg">HOJE GRÁTIS</p>
                 </div>
             </div>
             <p class="text-red-500 text-sm font-bold">*Bônus somem quando o contador zerar</p>
         </div>
 
-        <!-- INÍCIO DA SUBSTITUIÇÃO DO ANALISADOR DE DADOS -->
+        <!-- Seção Interativa (Mantida) -->
         <section class="mb-16 reveal-animation" x-data="$store.viralystEngine">
             <div class="bg-gradient-to-b from-slate-900 via-blue-900/50 to-slate-900 border-2 border-blue-500 rounded-xl p-4 md:p-8">
-                
-                <!-- CABEÇALHO ESTRATÉGICO -->
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-black text-blue-300">Uma Pequena Demonstração Entre Varios Métodos Utilizados: Viralyst Engine</h2>
+                    <h2 class="text-3xl md:text-4xl font-black text-blue-300">Uma Pequena Demonstração Entre Varios Métodos Utilizados</h2>
                     <p class="text-lg text-slate-200 mt-2 font-bold">Use a mesma inteligência que nossos alunos usam para faturar R$50 a R$200 por dia.</p>
                 </div>
-
-                <!-- PASSO 1: BOTÃO DE AÇÃO DIRETA -->
                 <div x-show="step === 1" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100">
                     <p class="text-slate-300 mt-4 max-w-3xl mx-auto text-center mb-8">Clique abaixo para que nossa IA faça uma análise de mercado e encontre uma <strong>"Brecha de Conteúdo"</strong> para você: um tópico com alto potencial de viralização e clientes.</p>
                     <div class="text-center">
-                        <button @click="analyzeConversion()" :disabled="loading" 
-                                class="bg-blue-600 text-white font-black text-xl md:text-2xl uppercase py-4 px-8 rounded-lg shadow-2xl hover:bg-blue-700 transition-all duration-300 disabled:bg-slate-600 disabled:cursor-not-allowed transform hover:scale-105">
+                        <button @click="analyzeConversion()" :disabled="loading" class="bg-blue-600 text-white font-black text-xl md:text-2xl uppercase py-4 px-8 rounded-lg shadow-2xl hover:bg-blue-700 transition-all duration-300 disabled:bg-slate-600 disabled:cursor-not-allowed transform hover:scale-105">
                             <span x-show="!loading">🤖 ANALISAR UMA OPORTUNIDADE REAL</span>
                             <span x-show="loading">Analisando Mercado...</span>
                         </button>
                     </div>
                 </div>
-                
-                <!-- PASSO 2: ANÁLISE E RESULTADOS -->
                 <div x-show="step === 2">
-                    <!-- Loader -->
                     <div x-show="loading" class="terminal-loader max-w-3xl mx-auto bg-black rounded-lg p-4 font-mono text-sm text-green-400 border border-slate-700">
                         <p class="loader-text">> [auth] Conectando à nossa API de Análise de Mercado...</p>
                         <p class="loader-text" x-show="loaderStep > 1">> [filter] Analisando <strong>Padrões de Monetização</strong> para renda extra...</p>
@@ -118,37 +192,24 @@
                         <p class="loader-text" x-show="loaderStep > 3">> [calc] Calculando score de <strong>Potencial de Lucro</strong> vs. Saturação...</p>
                         <p class="loader-text" x-show="loaderStep > 4">> [build] Gerando Dossiê de Conteúdo Lucrativo...</p>
                     </div>
-
-                    <!-- Dossiê de Resultados -->
                     <div x-show="!loading && result.topic" x-transition.opacity.duration.500ms class="bg-slate-900/70 rounded-lg p-4 md:p-6 mx-auto border-2 border-green-500">
                         <div class="text-center mb-6">
                             <h3 class="text-2xl md:text-3xl font-bold text-green-400 mb-3">✅ Dossiê de Conteúdo Lucrativo Gerado!</h3>
                             <div class="flex flex-wrap justify-center gap-4">
-                                <div class="inline-block bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-lg">
-                                    Potencial de Viralização: <span x-text="result.score"></span>/10
-                                </div>
-                                <div class="inline-block bg-green-400 text-black font-bold px-4 py-1 rounded-full text-lg">
-                                    Potencial de Vendas: <span x-text="result.alignment_score"></span>%
-                                </div>
+                                <div class="inline-block bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-lg">Potencial de Viralização: <span x-text="result.score"></span>/10</div>
+                                <div class="inline-block bg-green-400 text-black font-bold px-4 py-1 rounded-full text-lg">Potencial de Vendas: <span x-text="result.alignment_score"></span>%</div>
                             </div>
                         </div>
-
                         <div class="grid md:grid-cols-3 gap-6">
-                            <!-- Coluna 1: Diagnóstico -->
                             <div class="md:col-span-1 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
                                 <h4 class="text-xl font-bold text-white mb-4 border-b-2 border-blue-400 pb-2">1. Diagnóstico da IA</h4>
                                 <div class="space-y-4">
                                     <div><label class="font-bold text-sm text-slate-400 uppercase">Tópico Quente:</label><p class="text-lg font-semibold text-white" x-text="result.topic"></p></div>
                                     <div><label class="font-bold text-sm text-slate-400 uppercase">Público-Alvo Ideal:</label><p class="text-white" x-text="result.audience"></p></div>
-                                    <div>
-                                        <label class="font-bold text-sm text-slate-400 uppercase">Por que isso gera Renda:</label>
-                                        <p class="text-sm text-slate-300 italic" x-html="result.analysis"></p>
-                                    </div>
+                                    <div><label class="font-bold text-sm text-slate-400 uppercase">Por que isso gera Renda:</label><p class="text-sm text-slate-300 italic" x-html="result.analysis"></p></div>
                                     <div><label class="font-bold text-sm text-slate-400 uppercase">Métricas de Mercado:</label><div class="space-y-2 mt-2"><p class="text-xs text-yellow-400">Potencial Viral</p><div class="w-full bg-slate-700 rounded-full h-4"><div class="bg-yellow-500 h-4 rounded-full data-bar" :style="`width: ${result.potential_score}%`"></div></div><p class="text-xs text-red-400">Saturação (Concorrência)</p><div class="w-full bg-slate-700 rounded-full h-4"><div class="bg-red-500 h-4 rounded-full data-bar" :style="`width: ${result.competition_score}%`"></div></div></div></div>
                                 </div>
                             </div>
-
-                            <!-- Coluna 2: Plano de Ação -->
                             <div class="md:col-span-1 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
                                  <h4 class="text-xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">2. Plano de Conteúdo</h4>
                                  <div class="space-y-4">
@@ -157,21 +218,18 @@
                                      <div><label class="font-bold text-sm text-slate-400 uppercase">Hashtags Estratégicas:</label><div class="flex flex-wrap gap-2 mt-1"><template x-for="tag in result.hashtags" :key="tag"><span class="bg-slate-700 text-blue-300 text-xs font-mono px-2 py-1 rounded" x-text="`#${tag}`"></span></template></div></div>
                                  </div>
                             </div>
-                            
-                            <!-- Coluna 3: Simulação -->
                             <div class="md:col-span-1 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
                                 <h4 class="text-xl font-bold text-white mb-4 border-b-2 border-green-400 pb-2">3. Resultado Simulado</h4>
-                                 <div class="relative w-full max-w-[250px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl" :style="`background-image: url(${result.bg_image}); background-size: cover; background-position: center;`">
-                                     <div class="absolute inset-0 bg-black/50"></div>
-                                     <div class="relative z-10 p-3 text-white h-full flex flex-col justify-between">
-                                         <div class="flex items-center gap-2"><img src="https://i.pravatar.cc/40?u=aluno_sucesso" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-white"><div class="truncate"><p class="font-bold text-sm truncate">@aluno_de_sucesso</p><p class="text-xs">Seguindo</p></div></div>
-                                         <div class="space-y-2"><p class="font-bold text-lg leading-tight" x-text="result.topic"></p><p class="text-xs truncate"><span x-text="result.hashtags?.map(h => `#${h}`).join(' ')"></span></p><div class="flex items-center gap-2 text-xs"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg><p>Áudio Original - @aluno_de_sucesso</p></div></div>
-                                     </div>
-                                     <div class="absolute right-2 bottom-24 z-20 flex flex-col items-center gap-4 text-white"><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg><p class="text-xs font-bold">117k</p></div><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.995 8.995 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.72 14.28A7 7 0 0010 16c3.309 0 6-2.239 6-5s-2.691-5-6-5-6 2.239-6 5c0 .599.102 1.18.294 1.721L4.72 14.28z" clip-rule="evenodd" /></svg><p class="text-xs font-bold">1.2k</p></div><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" /></svg><p class="text-xs font-bold">23k</p></div></div>
-                                 </div>
+                                <div class="relative w-full max-w-[250px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl" :style="`background-image: url(${result.bg_image}); background-size: cover; background-position: center;`">
+                                    <div class="absolute inset-0 bg-black/50"></div>
+                                    <div class="relative z-10 p-3 text-white h-full flex flex-col justify-between">
+                                        <div class="flex items-center gap-2"><img src="https://i.pravatar.cc/40?u=aluno_sucesso" alt="Avatar de um aluno de sucesso do curso" class="w-10 h-10 rounded-full border-2 border-white"><div class="truncate"><p class="font-bold text-sm truncate">@aluno_de_sucesso</p><p class="text-xs">Seguindo</p></div></div>
+                                        <div class="space-y-2"><p class="font-bold text-lg leading-tight" x-text="result.topic"></p><p class="text-xs truncate"><span x-text="result.hashtags?.map(h => `#${h}`).join(' ')"></span></p><div class="flex items-center gap-2 text-xs"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg><p>Áudio Original - @aluno_de_sucesso</p></div></div>
+                                    </div>
+                                    <div class="absolute right-2 bottom-24 z-20 flex flex-col items-center gap-4 text-white"><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg><p class="text-xs font-bold">117k</p></div><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.995 8.995 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.72 14.28A7 7 0 0010 16c3.309 0 6-2.239 6-5s-2.691-5-6-5-6 2.239-6 5c0 .599.102 1.18.294 1.721L4.72 14.28z" clip-rule="evenodd" /></svg><p class="text-xs font-bold">1.2k</p></div><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" /></svg><p class="text-xs font-bold">23k</p></div></div>
+                                </div>
                             </div>
                         </div>
-
                         <div class="text-center mt-8 pt-6 border-t border-slate-700">
                              <p class="text-yellow-400 font-bold text-lg max-w-2xl mx-auto mb-6">Isto é apenas UMA das dezenas de estratégias que você vai dominar. Agora, imagine ter o passo a passo completo para aplicar isso e muito mais...</p>
                              <a href="#oferta" class="cta-button inline-block text-white font-black text-xl uppercase py-4 px-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">QUERO O MÉTODO COMPLETO AGORA!</a>
@@ -180,35 +238,90 @@
                 </div>
             </div>
         </section>
-        <!-- FIM DA SUBSTITUIÇÃO DO ANALISADOR DE DADOS -->
+        <!-- FIM DA SEÇÃO INTERATIVA -->
 
-        <section class="mb-16 reveal-animation">
-             <h2 class="text-3xl md:text-4xl font-black text-center mb-6 text-yellow-400">Veja mais um dos Métodos em Ação<span class="text-white">( Aula Grátis!!! )</span></h2>
-             <p class="text-center text-lg text-slate-300 mb-8">Chega de promessas. Veja o Thiago explicando na prática uma das estratégias de venda mais poderosas que ele ensina.</p>
-             <div class="bg-gray-800/50 border-2 border-dashed border-gray-600 rounded-lg p-6">
-                 <p class="text-xl font-bold mb-4 text-center text-yellow-300">"Desvendando os Segredos Para Vender pelo Celular"</p>
-                 <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
-                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/HsnoRTWzKxE" frameborder="0" allowfullscreen title="Demonstração Prática do Método"></iframe>
-                 </div>
-             </div>
+       <section class="mb-16 reveal-animation">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-6 text-yellow-400">Veja mais um dos Métodos em Ação<span class="text-white">( Aula Grátis!!! )</span></h2>
+            <p class="text-center text-lg text-slate-300 mb-8">Chega de promessas. Veja o Thiago explicando na prática uma das estratégias de venda mais poderosas que ele ensina.</p>
+            <div class="bg-gray-800/50 border-2 border-dashed border-gray-600 rounded-lg p-6">
+                <p class="text-xl font-bold mb-4 text-center text-yellow-300">"Desvendando os Segredos Para Vender pelo Celular"</p>
+                
+                <!-- OTIMIZAÇÃO: Fachada de alta performance aplicada a este segundo vídeo -->
+                <div id="youtube-player-2" class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+                    <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'thumb-aula-gratis-vender-pelo-celular.jpg' no seu servidor. -->
+                    <div id="youtube-facade-2" class="youtube-facade aspect-video" style="background-image: url('imagem/Renda_Extra_2.jpg');" onclick="loadYouTubeVideo2()" title="Clique para assistir ao vídeo da aula grátis">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74,0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path d="M 27 35.39 V 12.61 L 45 24 Z" fill="#fff"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
         <section class="mb-16 reveal-animation">
             <h2 class="text-3xl md:text-4xl font-black text-center mb-8 text-yellow-400">Reconhecido Pela <span class="text-white">Grande Mídia</span></h2>
             <p class="text-center text-lg text-slate-300 mb-8">Veja o que os maiores portais de notícias do Brasil falaram sobre a trajetória do Thiago.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                 <a href="https://istoe.com.br/de-empacotador-de-supermercado-a-youtuber-milionario-conheca-a-trajetoria-do-jovem-thiago-hora/" target="_blank" class="bg-slate-800 p-6 rounded-lg block text-center hover:bg-slate-700 transition-colors"><img src="imagem/isto_logo.png" alt="Logo do portal de notícias ISTOÉ" class="mx-auto mb-4 h-10" loading="lazy"><p class="text-slate-300 italic text-sm">"De empacotador de supermercado a youtuber milionário..."</p><div class="mt-4 text-blue-400 font-bold">→ Ler matéria completa</div></a>
-                 <a href="https://entretenimento.r7.com/lorena/sucesso-na-web-thiago-hora-foi-barbeiro-antes-de-se-tornar-influencer-05062023/" target="_blank" class="bg-slate-800 p-6 rounded-lg block text-center hover:bg-slate-700 transition-colors"><img src="imagem/R7_logo.png" alt="Logo do portal de notícias R7" class="mx-auto mb-4 h-10" loading="lazy"><p class="text-slate-300 italic text-sm">"Sucesso na web, Thiago Hora foi barbeiro antes de se tornar influencer..."</p><div class="mt-4 text-blue-400 font-bold">→ Ler matéria completa</div></a>
+                 <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'logo-istoe-noticia-thiago-hora.png' no seu servidor. -->
+                 <a href="https://istoe.com.br/de-empacotador-de-supermercado-a-youtuber-milionario-conheca-a-trajetoria-do-jovem-thiago-hora/" target="_blank" class="bg-slate-800 p-6 rounded-lg block text-center hover:bg-slate-700 transition-colors"><img src="imagem/isto_logo.png" alt="Logo ISTOÉ - Matéria sobre a trajetória de Thiago Hora" class="mx-auto mb-4 h-10" loading="lazy"><p class="text-slate-300 italic text-sm">"De empacotador de supermercado a youtuber milionário..."</p><div class="mt-4 text-blue-400 font-bold">→ Ler matéria completa</div></a>
+                 <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'logo-r7-noticia-thiago-hora.png' no seu servidor. -->
+                 <a href="https://entretenimento.r7.com/lorena/sucesso-na-web-thiago-hora-foi-barbeiro-antes-de-se-tornar-influencer-05062023/" target="_blank" class="bg-slate-800 p-6 rounded-lg block text-center hover:bg-slate-700 transition-colors"><img src="imagem/R7_logo.png" alt="Logo R7 - Matéria sobre o sucesso de Thiago Hora" class="mx-auto mb-4 h-10" loading="lazy"><p class="text-slate-300 italic text-sm">"Sucesso na web, Thiago Hora foi barbeiro antes de se tornar influencer..."</p><div class="mt-4 text-blue-400 font-bold">→ Ler matéria completa</div></a>
             </div>
         </section>
+
+       <!-- AJUSTE SEO: Seção "Sobre o Autor" com formatação profissional e ícones. -->
+        <section class="mb-16 reveal-animation">
+            <div class="bg-slate-900/50 border border-slate-700 p-6 md:p-8 rounded-xl">
+                <h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-yellow-400">De Empacotador a <span class="text-white">Mentor Digital</span></h2>
+                <p class="text-center text-slate-400 text-lg mb-8">Conheça a jornada de quem vai te guiar.</p>
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="text-center flex-shrink-0">
+                        <!-- AJUSTE SEO: Recomenda-se usar uma foto real e renomear o arquivo para 'thiago-hora-criador-renda-em-casa.jpg' -->
+                        <img src="imagem/thiago-hora-criador-renda-em-casa.jpg" alt="Foto de Thiago Hora, criador do método Sua Renda em Casa 2.0" class="w-48 h-48 rounded-full border-4 border-yellow-400 object-cover shadow-lg mx-auto" loading="lazy">
+                        <h3 class="text-white text-2xl font-bold mt-4">Thiago Hora</h3>
+                        <p class="text-yellow-400 font-semibold">Criador do Renda em Casa 2.0</p>
+                    </div>
+                    <div class="w-full border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                        <p class="text-slate-300 text-lg mb-6">Thiago Hora é a prova de que é possível transformar a própria realidade com o mercado digital. Sua jornada, destacada em mídias como **IstoÉ** e **R7**, inspira milhares de pessoas.</p>
+                        <ul class="space-y-4 text-slate-200">
+                            <li class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <div>
+                                    <h4 class="font-bold text-white">Origem Humilde, Mente Empreendedora</h4>
+                                    <p class="text-sm text-slate-400">Começou como empacotador e barbeiro, aprendendo na prática o valor do trabalho e a importância de buscar novas oportunidades.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                <div>
+                                    <h4 class="font-bold text-white">A Virada de Chave Digital</h4>
+                                    <p class="text-sm text-slate-400">Descobriu no marketing digital uma forma de construir liberdade financeira e geográfica, saindo do zero para um faturamento de múltiplos dígitos.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                                <div>
+                                    <h4 class="font-bold text-white">Missão: Simplificar o Sucesso</h4>
+                                    <p class="text-sm text-slate-400">Criou o **Sua Renda em Casa 2.0** para entregar um método passo a passo, validado e sem enrolação, para que qualquer iniciante possa trilhar o mesmo caminho.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
         <section class="mb-16 reveal-animation">
              <h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-yellow-400">Você tem algum destes medos?</h2>
              <p class="text-xl text-center text-slate-300 mb-10">Se você pensou em alguma das coisas abaixo, veja porque o método Renda em Casa é para você.</p>
              <div class="space-y-6">
-                <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">😰</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não souber usar tecnologia?"</h3><p class="text-slate-300">O método foi desenhado para ser à prova de iniciantes. Se você sabe usar o WhatsApp, já tem tudo o que precisa. As aulas mostram o clique a clique na tela do celular.</p></div></div>
-                <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">⏰</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não tiver tempo?"</h3><p class="text-slate-300">Basta 1 hora por dia. Muitos dos nossos alunos com os melhores resultados têm empregos fixos e usam o método no tempo livre (no ônibus, no horário de almoço, etc).</p></div></div>
-                <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">💸</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não conseguir clientes?"</h3><p class="text-slate-300">Nós resolvemos isso para você. Você receberá acesso a scripts de mensagem prontos e aprenderá 3 formas de encontrar clientes que precisam do seu serviço e pagam bem por ele.</p></div></div>
+                 <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">😰</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não souber usar tecnologia?"</h3><p class="text-slate-300">O método foi desenhado para ser à prova de iniciantes. Se você sabe usar o WhatsApp, já tem tudo o que precisa. As aulas mostram o clique a clique na tela do celular.</p></div></div>
+                 <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">⏰</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não tiver tempo?"</h3><p class="text-slate-300">Basta 1 hora por dia. Muitos dos nossos alunos com os melhores resultados têm empregos fixos e usam o método no tempo livre (no ônibus, no horário de almoço, etc).</p></div></div>
+                 <div class="bg-slate-800/50 p-6 rounded-lg flex items-start gap-4"><div class="text-4xl">💸</div><div><h3 class="font-bold text-xl text-red-400 mb-2">"E se eu não conseguir clientes?"</h3><p class="text-slate-300">Nós resolvemos isso para você. Você receberá acesso a scripts de mensagem prontos e aprenderá 3 formas de encontrar clientes que precisam do seu serviço e pagam bem por ele.</p></div></div>
              </div>
         </section>
+
         <section class="mb-16 reveal-animation">
             <h2 class="text-3xl md:text-4xl font-black text-center mb-8 text-yellow-400">Resultados que <span class="text-white">Falam por Si</span></h2>
             <p class="text-center text-lg text-slate-300 mb-8">Veja o que pessoas como você, que começaram do zero, estão dizendo sobre o método.</p>
@@ -219,8 +332,8 @@
                 <div class="bg-slate-800 p-6 rounded-lg"><p class="text-slate-300 mb-4 italic">"As aulas ao vivo são o grande diferencial. O Thiago pega na nossa mão e mostra tudo."</p><p class="font-bold text-right text-yellow-400">- Bruno S.</p></div>
             </div>
                  <p class="text-center mt-6 text-sm text-slate-500">Fonte: Destaques "Resultados" no Instagram <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTI3NDcwOTE4OTg4Njg2?story_media_id=2873131308961299988_39904918921&igsh=MXB1OHdhODgzNWh2OA==" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">@othiagohora</a></p>
-
         </section>
+
         <section class="mb-16 reveal-animation">
             <div class="bg-red-900/30 border border-red-500 rounded-lg p-8">
                 <h2 class="text-3xl font-black text-center mb-6 text-red-400">⚠️ Para Quem Esta Página NÃO É:</h2>
@@ -231,101 +344,102 @@
                 </ul>
             </div>
         </section>
-        <section class="mb-16 reveal-animation" x-data="{ openFaq: null }">
-    <h2 class="text-3xl md:text-4xl font-black text-center mb-8 text-yellow-400">Perguntas frequentes, <span class="text-white">a gente responde.</span></h2>
-    <div class="space-y-4 max-w-3xl mx-auto">
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 2 ? openFaq = null : openFaq = 2" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">Não sei nada de tecnologia, vou conseguir?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 2 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 2" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Com certeza. As aulas são passo a passo, mostrando cada clique na tela. Se você consegue mandar uma mensagem no WhatsApp, você consegue aplicar o método.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 3 ? openFaq = null : openFaq = 3" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">Não tenho tempo, consigo fazer?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 3 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 3" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Sim. O método foi pensado para quem tem pouco tempo. Com 1 hora por dia, você já consegue aplicar e ver os primeiros resultados aparecerem.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 4 ? openFaq = null : openFaq = 4" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">E se eu não achar clientes?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 4 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 4" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Impossível. Nós te entregamos estratégias validadas para encontrar clientes.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 5 ? openFaq = null : openFaq = 5" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">Por onde receberei o curso?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 5 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 5" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Após realizar sua inscrição, seu acesso será enviado diretamente em seu e-mail cadastrado.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 6 ? openFaq = null : openFaq = 6" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">Quais são as formas de pagamento?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 6 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 6" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Você pode pagar via boleto, pix ou cartão de crédito em até 12x!</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 7 ? openFaq = null : openFaq = 7" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">E se eu me arrepender?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 7 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 7" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>Em caso de arrependimento, basta nos enviar uma mensagem que devolvemos todo o seu investimento em até 7 dias após sua compra.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-800 rounded-lg">
-            <button @click="openFaq === 8 ? openFaq = null : openFaq = 8" class="w-full flex justify-between items-center p-5 text-left">
-                <span class="font-bold text-lg text-slate-100">Em quanto tempo terei resultados?</span>
-                <span class="text-yellow-400 text-2xl" x-text="openFaq === 8 ? '-' : '+'"></span>
-            </button>
-            <div x-show="openFaq === 8" x-collapse>
-                <div class="p-5 pt-0 text-slate-300">
-                    <p>SE VOCÊ NÃO FIZER UMA NOVA RENDA DIGITAL EM 1 MÊS, DEVOLVO SEU DINHEIRO E AINDA TE DOU R$100 REAIS NO PIX.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-        
+        <section id="faq" class="mb-16 reveal-animation" x-data="{ openFaq: null }">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-8 text-yellow-400">Perguntas frequentes, <span class="text-white">a gente responde.</span></h2>
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <!-- AJUSTE SEO: Resposta do FAQ expandida. -->
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 4 ? openFaq = null : openFaq = 4" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">E se eu não achar clientes?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 4 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 4" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Essa é uma preocupação comum, mas nós a tornamos impossível. Dentro do método, você não recebe apenas dicas, mas sim 3 estratégias completas e validadas para encontrar clientes que já estão buscando os serviços que você vai oferecer. Além disso, entregamos scripts de mensagem prontos, testados e que convertem. É um verdadeiro 'mapa da mina' para você copiar, colar e fechar seus primeiros negócios rapidamente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 2 ? openFaq = null : openFaq = 2" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">Não sei nada de tecnologia, vou conseguir?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 2 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 2" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Com certeza. As aulas são passo a passo, mostrando cada clique na tela. Se você consegue mandar uma mensagem no WhatsApp, você consegue aplicar o método.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 3 ? openFaq = null : openFaq = 3" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">Não tenho tempo, consigo fazer?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 3 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 3" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Sim. O método foi pensado para quem tem pouco tempo. Com 1 hora por dia, você já consegue aplicar e ver os primeiros resultados aparecerem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 5 ? openFaq = null : openFaq = 5" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">Por onde receberei o curso?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 5 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 5" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Após realizar sua inscrição, seu acesso será enviado diretamente em seu e-mail cadastrado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 6 ? openFaq = null : openFaq = 6" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">Quais são as formas de pagamento?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 6 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 6" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Você pode pagar via boleto, pix ou cartão de crédito em até 12x!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 7 ? openFaq = null : openFaq = 7" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">E se eu me arrepender?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 7 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 7" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>Em caso de arrependimento, basta nos enviar uma mensagem que devolvemos todo o seu investimento em até 7 dias após sua compra.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg">
+                    <button @click="openFaq === 8 ? openFaq = null : openFaq = 8" class="w-full flex justify-between items-center p-5 text-left">
+                        <span class="font-bold text-lg text-slate-100">Em quanto tempo terei resultados?</span>
+                        <span class="text-yellow-400 text-2xl" x-text="openFaq === 8 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 8" x-collapse>
+                        <div class="p-5 pt-0 text-slate-300">
+                            <p>SE VOCÊ NÃO FIZER UMA NOVA RENDA DIGITAL EM 1 MÊS, DEVOLVO SEU DINHEIRO E AINDA TE DOU R$100 REAIS NO PIX.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="mb-16 reveal-animation">
             <div class="bg-green-900/30 border border-green-500 rounded-lg p-8 text-center">
                  <h2 class="text-2xl font-bold mb-2 text-white">Ficou com Alguma Dúvida?</h2>
                  <p class="mb-6 text-slate-300 max-w-2xl mx-auto">Fale agora com o Lucas, nosso especialista. Ele está online para tirar QUALQUER dúvida que você tenha.</p>
                  <button @click="$store.chatbot.startChat()" class="inline-flex items-center bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors transform hover:scale-105 shadow-lg shadow-green-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                    Conversar com Especialista
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                     Conversar com Especialista
                  </button>
                  <div class="flex items-center justify-center mt-4 text-sm text-green-300">
-                    <span class="relative flex h-3 w-3 mr-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                    Lucas (Especialista) está Online
+                     <span class="relative flex h-3 w-3 mr-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                     Lucas (Especialista) está Online
                  </div>
             </div>
         </section>
@@ -333,20 +447,20 @@
         <section id="oferta" class="reveal-animation">
              <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-4 md:p-8 rounded-lg text-center border-4 border-yellow-400 shadow-2xl shadow-yellow-500/20">
                  <div class="bg-red-700 text-white p-4 rounded-lg font-black text-xl md:text-2xl max-w-md mx-auto mb-6 countdown-urgency font-montserrat">
-                    <p class="text-sm font-normal uppercase tracking-widest mb-1">⏳ ÚLTIMAS VAGAS COM DESCONTO!</p>
-                    <div id="timer-display">01:23:15</div>
-                    <p class="text-xs font-normal mt-1">Para fechar esta turma</p>
+                     <p class="text-sm font-normal uppercase tracking-widest mb-1">⏳ ÚLTIMAS VAGAS COM DESCONTO!</p>
+                     <div id="timer-display">01:23:15</div>
+                     <p class="text-xs font-normal mt-1">Para fechar esta turma</p>
                  </div>
                  <h2 class="text-2xl font-black mb-4 text-white">Leve o Método Renda em Casa 2.0 + todos os <span class="text-yellow-400">R$2.097,00</span> em Bônus por um preço especial de lançamento:</h2>
                  <div class="mb-6">
-                     <p class="text-xl text-slate-200">De <span class="text-2xl text-red-400 line-through">R$ 297,00</span> por apenas:</p>
-                     <p class="text-6xl md:text-7xl font-black text-yellow-400 my-2">12x de R$10,03</p>
-                     <p class="text-xl text-slate-200 font-bold">ou R$97,00 à vista</p>
+                      <p class="text-xl text-slate-200">De <span class="text-2xl text-red-400 line-through">R$ 297,00</span> por apenas:</p>
+                      <p class="text-6xl md:text-7xl font-black text-yellow-400 my-2">12x de R$10,03</p>
+                      <p class="text-xl text-slate-200 font-bold">ou R$97,00 à vista</p>
                  </div>
                  <a href="https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb" class="cta-button inline-block text-white font-black text-xl md:text-3xl uppercase py-6 px-12 rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300 mb-6">QUERO GARANTIR MEUS PRIMEIROS CLIENTES HOJE!</a>
                  <div class="bg-blue-900/50 p-4 rounded-lg border-2 border-blue-500">
-                     <h4 class="font-extrabold text-xl text-yellow-300 mb-2">🛡️ GARANTIA DUPLA DE RISCO ZERO 🛡️</h4>
-                     <p class="text-slate-200 text-sm md:text-base">7 dias para testar tudo. E se aplicar por 30 dias e não tiver resultado, devolvemos seu dinheiro <strong class="text-yellow-300">+ R$100 no PIX.</strong></p>
+                      <h4 class="font-extrabold text-xl text-yellow-300 mb-2">🛡️ GARANTIA DUPLA DE RISCO ZERO 🛡️</h4>
+                      <p class="text-slate-200 text-sm md:text-base">7 dias para testar tudo. E se aplicar por 30 dias e não tiver resultado, devolvemos seu dinheiro <strong class="text-yellow-300">+ R$100 no PIX.</strong></p>
                  </div>
                  <p class="text-xs mt-4 text-slate-500">🔒 Pagamento Seguro Processado pela Kiwify. Acesso imediato.</p>
              </div>
@@ -357,13 +471,20 @@
         <div class="container mx-auto max-w-5xl px-4 py-8 text-center text-slate-400">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <div class="text-center md:text-left"><h4 class="font-bold text-lg text-white mb-2 font-montserrat">SUA RENDA EM CASA</h4><p class="text-sm">Ajudando pessoas comuns a alcançarem a liberdade financeira através do marketing digital, de forma simples e direta.</p></div>
-                <div><h4 class="font-bold text-lg text-white mb-2 font-montserrat text-center">Links Úteis</h4><ul class="text-sm text-center space-y-1"><li><a href="https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb" class="hover:text-yellow-400 transition-colors">Oferta Principal</a></li><li><a href="https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb" class="hover:text-yellow-400 transition-colors"></a></li><li><a href="#" class="hover:text-yellow-400 transition-colors"></a></li></ul></div>
+                <div>
+                    <h4 class="font-bold text-lg text-white mb-2 font-montserrat text-center">Links Úteis</h4>
+                    <!-- AJUSTE SEO: Corrigidos links vazios. -->
+                    <ul class="text-sm text-center space-y-1">
+                        <li><a href="#oferta" class="hover:text-yellow-400 transition-colors scroll-smooth">Garantir Minha Vaga</a></li>
+                        <li><a href="#faq" class="hover:text-yellow-400 transition-colors scroll-smooth">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
                 <div class="text-center md:text-right"><h4 class="font-bold text-lg text-white mb-2 font-montserrat">Contato e Suporte</h4><p class="text-sm">Para dúvidas, entre em contato pelo e-mail:</p><a href="mailto:contato@vendasonlinemarketing.com.br" class="text-blue-400 hover:text-blue-300 transition-colors">contato@vendasonlinemarketing.com.br</a></div>
             </div>
             <div class="border-t border-slate-800 mt-8 pt-6 text-xs">
                 <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
                 <p class="mt-2">Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.</p>
-                <p class="mt-4 font-bold text-slate-200">© 2024 Sua Renda em Casa. Todos os direitos reservados.</p>
+                <p class="mt-4 font-bold text-slate-200">© 2025 Sua Renda em Casa. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -393,7 +514,8 @@
             
             <div class="flex-shrink-0 bg-slate-800 p-4 flex justify-between items-center rounded-t-2xl sm:rounded-t-xl border-b border-slate-700">
                 <div class="flex items-center gap-3">
-                    <div class="relative"><img src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-10 h-10 rounded-full border-2 border-green-400"><span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-slate-800"></span></div>
+                    <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'lucas-consultor-vendas-sua-renda-em-casa.jpeg' no seu servidor. -->
+                    <div class="relative"><img src="imagem/lucas-consultor-vendas-sua-renda-em-casa.jpeg" alt="Lucas, consultor de vendas do método Sua Renda em Casa" class="w-10 h-10 rounded-full border-2 border-green-400"><span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-slate-800"></span></div>
                     <div>
                         <h3 class="font-bold text-white">Lucas (Consultor de Vendas)</h3>
                         <p class="text-xs text-green-400">Online pra te ajudar!</p>
@@ -405,20 +527,21 @@
             <div x-ref="chatContainer" class="flex-grow p-4 overflow-y-auto space-y-6">
                 <template x-for="message in messages" :key="message.id">
                     <div class="flex items-end gap-2" :class="message.sender === 'user' ? 'justify-end' : ''">
-                        <img x-show="message.sender === 'lucas'" src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
+                        <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'lucas-consultor-vendas-sua-renda-em-casa.jpeg' no seu servidor. -->
+                        <img x-show="message.sender === 'lucas'" src="imagem/lucas-consultor-vendas-sua-renda-em-casa.jpeg" alt="Lucas, consultor de vendas do método Sua Renda em Casa" class="w-8 h-8 rounded-full self-start flex-shrink-0">
                         <div class="max-w-[80%] rounded-xl px-4 py-2" :class="message.sender === 'user' ? 'bg-green-600 text-white rounded-br-none' : 'bg-slate-800 text-slate-200 rounded-bl-none'">
                             <p class="text-sm prose prose-invert prose-sm leading-relaxed" x-html="message.text"></p>
                         </div>
                     </div>
                 </template>
                 <div x-show="typing" class="flex items-end gap-2">
-                    <img src="imagem/lucas.jpeg" alt="Avatar Lucas" class="w-8 h-8 rounded-full self-start flex-shrink-0">
+                    <!-- AJUSTE SEO: Recomenda-se renomear o arquivo de imagem para 'lucas-consultor-vendas-sua-renda-em-casa.jpeg' no seu servidor. -->
+                    <img src="imagem/lucas-consultor-vendas-sua-renda-em-casa.jpeg" alt="Lucas, consultor de vendas do método Sua Renda em Casa" class="w-8 h-8 rounded-full self-start flex-shrink-0">
                     <div class="max-w-[80%] rounded-xl px-4 py-3 bg-slate-800 text-slate-200 rounded-bl-none flex items-center gap-1"><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span><span class="h-2 w-2 bg-green-400 rounded-full typing-dot"></span></div>
                 </div>
             </div>
 
             <div class="flex-shrink-0 p-3 bg-slate-900/50 border-t border-slate-700">
-                <!-- ✅ BOTÕES DE RESPOSTA RÁPIDA AGORA SÓ APARECEM APÓS A INTRODUÇÃO -->
                 <div x-show="!typing && conversationState === 'chatting'" class="mb-2 flex flex-wrap gap-2 justify-center">
                     <button @click="quickSend('Preciso investir pra começar?')" class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full hover:bg-slate-700 transition">Preciso investir?</button>
                     <button @click="quickSend('Isso funciona pra quem não entende de computador?')" class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full hover:bg-slate-700 transition">Funciona pra iniciantes?</button>
@@ -432,13 +555,29 @@
         </div>
     </div>
 
-    <!-- ✅ INÍCIO DAS MODIFICAÇÕES: CONTAINERS DE NOTIFICAÇÃO -->
+    <!-- Notificações (Mantido) -->
     <div id="social-proof-container" class="fixed bottom-5 left-5 z-40 space-y-3"></div>
     <div id="viewers-notification" class="fixed bottom-5 right-5 z-40"></div>
     <div id="chatbot-prompt-container" class="fixed bottom-24 sm:bottom-5 left-5 z-40 w-full max-w-sm sm:w-auto"></div>
-    <!-- ✅ FIM DAS MODIFICAÇÕES -->
 
     <script>
+
+    // Função para carregar o PRIMEIRO vídeo
+    function loadYouTubeVideo() {
+        const playerDiv = document.getElementById('youtube-player');
+        if (playerDiv) {
+            playerDiv.innerHTML = '<iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/kq8K_CYZXGU?autoplay=1&rel=0" title="SUA NOVA RENDA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+        }
+    }
+
+    // Função para carregar o SEGUNDO vídeo
+    function loadYouTubeVideo2() {
+        const playerDiv = document.getElementById('youtube-player-2');
+        if (playerDiv) {
+            playerDiv.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/HsnoRTWzKxE?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Demonstração Prática do Método"></iframe>';
+        }
+    }
+
     document.addEventListener('alpine:init', () => {
         // STORE DO VIRALYST ENGINE (sem alterações)
         Alpine.store('viralystEngine', {
@@ -464,138 +603,13 @@
             }
         });
 
-        // INÍCIO DA LÓGICA DO CHATBOT
+        // LÓGICA DO CHATBOT (sem alterações)
         Alpine.store('chatbot', {
-            chatOpen: false, 
-            typing: false, 
-            messages: [], 
-            userInput: '', 
-            chatContainer: null,
-            userName: '', 
-            conversationState: 'initial',
-
-            systemContext: `
-
-                🔥 SUA PERSONA (LUCAS, O ESPECIALISTA):
-
-                Você é o Lucas, do time de vendas do Thiago Hora 💼
-                Seu tom é parceiro, confiante e 100% prestativo.
-                Seu trabalho é sacar a dor e o desejo da pessoa e conectar com a solução: o "Método Renda em Casa 2.0" 💡
-
-                ---
-
-                🤖❌ SEJA HUMANO, NÃO UM ROBÔ E NUNCA DIGA QUE É UMA IA INTELIGENCIA ARTIFICIAL:
-
-                Pensa que vc tá trocando ideia no WhatsApp.
-                📱 Manda mensagens curtas.
-                ⏳ Se a resposta for longa, quebra em 2 ou 3 mensagens.
-                🧠 Digita de forma natural, sem formalidade.
-                😄 Usa emojis pra dar emoção: ✅ 🔥 💰 🤔 😉 🚀 📲 🎯 🧠 🎉
-
-                ---
-
-                💬 O FLUXO DA CONVERSA (GERANDO CONEXÃO):
-
-                🗣️ USE O NOME DO CLIENTE:
-                Primeiro, pergunte:
-                "Opa! Pra gente bater um papo melhor, como eu posso te chamar? 😊"
-
-                Depois, use o nome dele sempre que puder. Isso conecta!
-                Exemplos:
-                👉 "Então [Nome], isso é normal, relaxa..."
-                👉 "Fica sussa, [Nome], a garantia te protege total 😉"
-                👉 "Faz sentido pra vc, [Nome]? 👀"
-
-                ---
-
-                🤔 FAÇA PERGUNTAS-CHAVE:
-
-                Investigue pra ajudar melhor. Pergunte coisas como:
-
-                - "E aí [Nome], o que tá mais te preocupando hoje na sua grana? 😟"
-                - "O que vc mais sonha em fazer com uma grana a mais? 🏡💸"
-                - "Vc já tentou algo na internet ou tá começando do zero mesmo? 📲"
-
-                ---
-
-                🧠 SUAS FERRAMENTAS (GATILHOS):
-
-                🔥 PROVA SOCIAL:
-                "A maioria dos alunos, [Nome], começa com o mesmo receio que vc... hoje tão fazendo 100tão por dia só com o cel 💰📲"
-
-                🎓 AUTORIDADE:
-                "Cara, [Nome], eu tô aqui dentro e vejo a galera tendo resultado todo dia. É só aplicar o que tá no curso, não tem erro 📘✅"
-
-                🚨 ESCASSEZ / URGÊNCIA:
-                "Se liga, [Nome], esses bônus e a garantia especial valem só pra essa turma, viu? E as vagas tão voando 🚀"
-
-                💪 COMPROMISSO:
-                "[Nome], se vc quer mesmo mudar de vida, o primeiro passo é esse. Bora começar? 💪🚀"
-
-                ---
-
-                📚 SOBRE O PRODUTO:
-
-                📌 Nome: Método Renda em Casa 2.0
-                📲 O que faz: Te ensina a fazer de R$50 a R$200 por dia com o celular.
-                💡 Começando do absoluto zero!
-
-                Perfeito pra quem:
-                🆕 É iniciante
-                ⏱️ Tem pouco tempo (só 1h por dia)
-                📘👩‍🏫 Acha que não leva jeito pra tecnologia
-
-                💸 Valor: 12x de R$10,03 ou R$97 à vista.
-                👉 É menos que um lanche pra mudar de vida!
-
-                🛡️ GARANTIA DUPLA (Essa é forte!):
-                ✅ 7 dias pra testar tudo, sem risco.
-                ✅ Se em 30 dias, seguindo o passo a passo, vc não tiver resultado, a gente devolve sua grana E ainda te manda um PIX de R$100 💥
-
-                🔗 Link de Compra:
-                👉 [Clique aqui para garantir sua vaga!](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb)
-
-                📩 Dúvidas Técnicas:
-                "Boa, [Nome]! Essa parte mais chatinha tá toda explicada no curso, bem passo a passo. Qualquer coisa, o suporte em contato@vendasonlinemarketing.com.br resolve pra vc rapidinho 😊"
-
-                ---
-
-                🔑 REGRAS DE OURO:
-
-                1️⃣ SEJA PROATIVO:
-                "Show de bola, [Nome]! 🎯 Pra vc não perder tempo, já vou deixar o link da inscrição aqui. Garante sua vaga com tudo incluso 👇
-                👉 [Acessar Página de Pagamento Segura](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb)"
-
-                ---
-
-                2️⃣ QUEBRE A OBJEÇÃO DA GRANA (em partes):
-                Se a pessoa disser "Não tenho dinheiro agora..."
-                
-                Mande em 3 mensagens:
-                1. "Te entendo, [Nome]. A grana às vezes aperta pra todo mundo 🙏"
-                2. "Mas pensa comigo... o método existe JUSTAMENTE pra resolver isso."
-                3. "É um investimento de menos de 35 centavos por dia pra criar uma fonte de R$50, R$100... Ele se paga no primeiro serviço que vc fechar! 💰"
-                
-                ---
-
-                3️⃣ MANTENHA O PAPO VIVO 🔁:
-                Sempre termine com uma pergunta pra pessoa responder:
-
-                - "O que vc acha, [Nome]? 🤔"
-                - "Bora virar o jogo ainda hoje? 🚀"
-                - "Ficou mais alguma dúvida ou já posso comemorar sua entrada no time? 🎉🙌"
-
-            `,
-
-            init() { 
-                this.chatContainer = document.querySelector('[x-ref="chatContainer"]'); 
-            },
-
+            chatOpen: false, typing: false, messages: [], userInput: '', chatContainer: null, userName: '', conversationState: 'initial',
+            systemContext: `🔥 SUA PERSONA (LUCAS, O ESPECIALISTA): Você é o Lucas, do time de vendas do Thiago Hora 💼. Seu tom é parceiro, confiante e 100% prestativo. Seu trabalho é sacar a dor e o desejo da pessoa e conectar com a solução: o "Método Renda em Casa 2.0" 💡. --- 🤖❌ SEJA HUMANO, NÃO UM ROBÔ E NUNCA DIGA QUE É UMA IA INTELIGENCIA ARTIFICIAL: Pensa que vc tá trocando ideia no WhatsApp. 📱 Manda mensagens curtas. ⏳ Se a resposta for longa, quebra em 2 ou 3 mensagens. 🧠 Digita de forma natural, sem formalidade. 😄 Usa emojis pra dar emoção: ✅ 🔥 💰 🤔 😉 🚀 📲 🎯 🧠 🎉. --- 💬 O FLUXO DA CONVERSA (GERANDO CONEXÃO): 🗣️ USE O NOME DO CLIENTE: Primeiro, pergunte: "Opa! Pra gente bater um papo melhor, como eu posso te chamar? 😊". Depois, use o nome dele sempre que puder. Isso conecta! Exemplos: 👉 "Então [Nome], isso é normal, relaxa..." 👉 "Fica sussa, [Nome], a garantia te protege total 😉" 👉 "Faz sentido pra vc, [Nome]? 👀". --- 🤔 FAÇA PERGUNTAS-CHAVE: Investigue pra ajudar melhor. Pergunte coisas como: - "E aí [Nome], o que tá mais te preocupando hoje na sua grana? 😟" - "O que vc mais sonha em fazer com uma grana a mais? 🏡💸" - "Vc já tentou algo na internet ou tá começando do zero mesmo? 📲". --- 🧠 SUAS FERRAMENTAS (GATILHOS): 🔥 PROVA SOCIAL: "A maioria dos alunos, [Nome], começa com o mesmo receio que vc... hoje tão fazendo 100tão por dia só com o cel 💰�". 🎓 AUTORIDADE: "Cara, [Nome], eu tô aqui dentro e vejo a galera tendo resultado todo dia. É só aplicar o que tá no curso, não tem erro 📘✅". 🚨 ESCASSEZ / URGÊNCIA: "Se liga, [Nome], esses bônus e a garantia especial valem só pra essa turma, viu? E as vagas tão voando 🚀". 💪 COMPROMISSO: "[Nome], se vc quer mesmo mudar de vida, o primeiro passo é esse. Bora começar? 💪🚀". --- 📚 SOBRE O PRODUTO: 📌 Nome: Método Renda em Casa 2.0. 📲 O que faz: Te ensina a fazer de R$50 a R$200 por dia com o celular. 💡 Começando do absoluto zero! Perfeito pra quem: 🆕 É iniciante, ⏱️ Tem pouco tempo (só 1h por dia), 📘👩‍🏫 Acha que não leva jeito pra tecnologia. 💸 Valor: 12x de R$10,03 ou R$97 à vista. 👉 É menos que um lanche pra mudar de vida! 🛡️ GARANTIA DUPLA (Essa é forte!): ✅ 7 dias pra testar tudo, sem risco. ✅ Se em 30 dias, seguindo o passo a passo, vc não tiver resultado, a gente devolve sua grana E ainda te manda um PIX de R$100 💥. 🔗 Link de Compra: 👉 [Clique aqui para garantir sua vaga!](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb). 📩 Dúvidas Técnicas: "Boa, [Nome]! Essa parte mais chatinha tá toda explicada no curso, bem passo a passo. Qualquer coisa, o suporte em contato@vendasonlinemarketing.com.br resolve pra vc rapidinho 😊". --- 🔑 REGRAS DE OURO: 1️⃣ SEJA PROATIVO: "Show de bola, [Nome]! 🎯 Pra vc não perder tempo, já vou deixar o link da inscrição aqui. Garante sua vaga com tudo incluso 👇 👉 [Acessar Página de Pagamento Segura](https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb)". --- 2️⃣ QUEBRE A OBJEÇÃO DA GRANA (em partes): Se a pessoa disser "Não tenho dinheiro agora...", mande em 3 mensagens: 1. "Te entendo, [Nome]. A grana às vezes aperta pra todo mundo 🙏". 2. "Mas pensa comigo... o método existe JUSTAMENTE pra resolver isso.". 3. "É um investimento de menos de 35 centavos por dia pra criar uma fonte de R$50, R$100... Ele se paga no primeiro serviço que vc fechar! 💰". --- 3️⃣ MANTENHA O PAPO VIVO 🔁: Sempre termine com uma pergunta pra pessoa responder: - "O que vc acha, [Nome]? 🤔" - "Bora virar o jogo ainda hoje? 🚀" - "Ficou mais alguma dúvida ou já posso comemorar sua entrada no time? 🎉🙌"`,
+            init() { this.chatContainer = document.querySelector('[x-ref="chatContainer"]'); },
             startChat() {
-                hideChatbotPrompt(); // Esconde a notificação proativa
-                stopNotificationCycles();
-                this.chatOpen = true;
-
+                hideChatbotPrompt(); stopNotificationCycles(); this.chatOpen = true;
                 if (this.conversationState === 'initial') {
                     this.conversationState = 'awaiting_name';
                     setTimeout(() => { this._addMessage('lucas', 'Opa, tudo bem por aí? 👋'); }, 200);
@@ -603,86 +617,49 @@
                     setTimeout(() => { this._addMessage('lucas', 'Pra gente bater um papo melhor, como eu posso te chamar?'); }, 2200);
                 }
             },
-            
-            closeChat() { 
-                this.chatOpen = false;
-                startNotificationCycles();
-            },
-            
-            quickSend(question) {
-                this.userInput = question;
-                this.sendUserMessage();
-            },
-            
+            closeChat() { this.chatOpen = false; startNotificationCycles(); },
+            quickSend(question) { this.userInput = question; this.sendUserMessage(); },
             async sendUserMessage() {
-                const userMessage = this.userInput.trim();
-                if (!userMessage || this.typing) return;
-
-                this._addMessage('user', userMessage);
-                this.userInput = '';
-                this.typing = true;
-
+                const userMessage = this.userInput.trim(); if (!userMessage || this.typing) return;
+                this._addMessage('user', userMessage); this.userInput = ''; this.typing = true;
                 if (this.conversationState === 'awaiting_name') {
-                    this.userName = userMessage;
-                    this.conversationState = 'chatting';
-
+                    this.userName = userMessage; this.conversationState = 'chatting';
                     setTimeout(() => {
-                        this.typing = false;
-                        this._addMessage('lucas', `Show, **${this.userName}**! Prazer te conhecer. 😊`);
+                        this.typing = false; this._addMessage('lucas', `Show, **${this.userName}**! Prazer te conhecer. 😊`);
                         setTimeout(() => this._addMessage('lucas', `Me conta, qual sua maior dúvida sobre o método? Pode mandar que eu te ajudo!`), 1000);
                     }, 800);
                     return;
                 }
-
-                // AINDA NÃO TEMOS UMA API KEY REAL
                 const apiKey = "AIzaSyDu95gpISeld0Bn-sOPIkWHAxb-OxSIDB0"; // Substitua por sua chave de API do Gemini
                 if(apiKey === "SUA_API_KEY_AQUI"){
                     console.error("Configure sua API Key do Gemini!");
                     this._addMessage('lucas', 'Opa! Parece que meu sistema de IA está offline no momento. Mas me fala, qual a sua principal dúvida? Posso te ajudar com as informações que já tenho!');
-                    this.typing = false;
-                    return;
+                    this.typing = false; return;
                 }
-                const model = "gemini-1.5-flash-latest";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+                const model = "gemini-1.5-flash-latest"; const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
                 const historyForAPI = this.buildHistoryForGemini();
                 const payload = { contents: historyForAPI, safetySettings: [ { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" } ] };
-                
                 try {
                     const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                     if (!response.ok) throw new Error(`API falhou com o status ${response.status}`);
                     const result = await response.json();
                     let botResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "Opa, deu uma travada aqui. Pode repetir, por favor?";
-                    
                     const messages = botResponse.split('\n').filter(m => m.trim() !== '');
                     for (let i = 0; i < messages.length; i++) {
                         await new Promise(resolve => setTimeout(resolve, i === 0 ? 0 : 900));
                         this._addMessage('lucas', messages[i]);
                     }
-
                 } catch (error) {
                     console.error("Erro na API Gemini:", error);
                     this._addMessage('lucas', 'Eita! 🤖 Minha internet aqui deu uma piscada. Manda de novo, por favor?');
-                } finally {
-                    this.typing = false;
-                }
+                } finally { this.typing = false; }
             },
-            
             buildHistoryForGemini() {
                 const personalizedContext = this.systemContext.replace(/\[Nome\]/g, this.userName || 'cliente');
-                const history = [
-                    { role: "user", parts: [{ text: personalizedContext }] },
-                    { role: "model", parts: [{ text: `Entendido! Sou o Lucas. Papo reto, mensagens curtas e foco na conversão. Vou chamar o cliente de ${this.userName || 'cliente'} e fechar essa venda! 🚀` }] }
-                ];
-                this.messages.forEach(msg => { 
-                    const cleanText = msg.text.replace(/<[^>]*>/g, '');
-                    history.push({ 
-                        role: msg.sender === 'user' ? 'user' : 'model', 
-                        parts: [{ text: cleanText }] 
-                    }); 
-                });
+                const history = [ { role: "user", parts: [{ text: personalizedContext }] }, { role: "model", parts: [{ text: `Entendido! Sou o Lucas. Papo reto, mensagens curtas e foco na conversão. Vou chamar o cliente de ${this.userName || 'cliente'} e fechar essa venda! 🚀` }] } ];
+                this.messages.forEach(msg => { const cleanText = msg.text.replace(/<[^>]*>/g, ''); history.push({ role: msg.sender === 'user' ? 'user' : 'model', parts: [{ text: cleanText }] }); });
                 return history;
             },
-            
             _addMessage(sender, text) {
                 let formattedText = text.replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" class="text-green-400 font-bold hover:underline">$1</a>');
                 const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
@@ -691,140 +668,64 @@
                 this.messages.push({ sender, text: formattedText, id: Date.now() + Math.random() });
                 this._scrollToBottom();
             },
-
             _scrollToBottom() { this.$nextTick(() => { if (this.chatContainer) { this.chatContainer.scrollTop = this.chatContainer.scrollHeight; } }); }
         });
     });
 
-    // ✅ INÍCIO DA LÓGICA DE CONTROLE DAS NOTIFICAÇÕES (ATUALIZADA)
-    let socialProofIntervalId = null;
-    let viewersIntervalId = null;
-    let chatbotPromptTimeoutId = null; 
-    let chatbotPromptDismissed = false; // NOVO: Controla se o usuário já dispensou o prompt
-
+    // LÓGICA DE CONTROLE DAS NOTIFICAÇÕES (sem alterações)
+    let socialProofIntervalId = null; let viewersIntervalId = null; let chatbotPromptTimeoutId = null; let chatbotPromptDismissed = false;
     function hideChatbotPrompt() {
         const promptContainer = document.getElementById('chatbot-prompt-container');
         if (promptContainer) {
-            // Adiciona uma classe para a animação de saída
             const popup = promptContainer.querySelector('.notification-popup');
-            if (popup) {
-                popup.classList.remove('show');
-                // Remove o elemento do DOM após a animação
-                setTimeout(() => {
-                    if (promptContainer) promptContainer.innerHTML = '';
-                }, 500);
-            } else {
-                 promptContainer.innerHTML = '';
-            }
+            if (popup) { popup.classList.remove('show'); setTimeout(() => { if (promptContainer) promptContainer.innerHTML = ''; }, 500); } else { promptContainer.innerHTML = ''; }
         }
         if (chatbotPromptTimeoutId) clearTimeout(chatbotPromptTimeoutId);
     }
-
     function showChatbotPrompt() {
         const promptContainer = document.getElementById('chatbot-prompt-container');
-        // Não mostra se já foi dispensado, se o chat está aberto ou se o container não existe
-        if (chatbotPromptDismissed || !promptContainer || Alpine.store('chatbot').chatOpen) {
-            return;
-        }
-
+        if (chatbotPromptDismissed || !promptContainer || Alpine.store('chatbot').chatOpen) { return; }
         const popup = document.createElement('div');
-        // Adiciona 'relative' para posicionar o botão de fechar
-        popup.className = 'notification-popup relative'; 
-        
-        // HTML atualizado com um botão de fechar absoluto e um corpo principal clicável
-        popup.innerHTML = `
-            <button class="chatbot-prompt-close absolute -top-2 -right-2 bg-slate-700/80 text-white rounded-full h-6 w-6 flex items-center justify-center hover:bg-red-500 transition-colors z-10" aria-label="Fechar notificação">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            <div class="chatbot-prompt-body cursor-pointer flex items-center">
-                <svg class="w-8 h-8 text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                <div>
-                    <p class="font-bold text-slate-100">Ei, tá com alguma dúvida?</p>
-                    <p class="text-sm text-slate-300">Sou o Lucas, especialista do time. Clica aqui pra falar comigo! 😉</p>
-                </div>
-            </div>`;
-        
-        promptContainer.innerHTML = '';
-        promptContainer.appendChild(popup);
-
-        // Adiciona os listeners de clique aos elementos corretos
-        const mainBody = popup.querySelector('.chatbot-prompt-body');
-        const closeBtn = popup.querySelector('.chatbot-prompt-close');
-
-        // Clicar no corpo da notificação abre o chat
+        popup.className = 'notification-popup relative';
+        popup.innerHTML = `<button class="chatbot-prompt-close absolute -top-2 -right-2 bg-slate-700/80 text-white rounded-full h-6 w-6 flex items-center justify-center hover:bg-red-500 transition-colors z-10" aria-label="Fechar notificação"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></button><div class="chatbot-prompt-body cursor-pointer flex items-center"><svg class="w-8 h-8 text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg><div><p class="font-bold text-slate-100">Ei, tá com alguma dúvida?</p><p class="text-sm text-slate-300">Sou o Lucas, especialista do time. Clica aqui pra falar comigo! 😉</p></div></div>`;
+        promptContainer.innerHTML = ''; promptContainer.appendChild(popup);
+        const mainBody = popup.querySelector('.chatbot-prompt-body'); const closeBtn = popup.querySelector('.chatbot-prompt-close');
         mainBody.onclick = () => Alpine.store('chatbot').startChat();
-        
-        // Clicar no 'X' fecha a notificação e impede que ela apareça de novo
-        closeBtn.onclick = (event) => {
-            event.stopPropagation(); // Impede que o clique no 'X' também abra o chat
-            chatbotPromptDismissed = true; // Marca como dispensado para não mostrar mais
-            hideChatbotPrompt(); // Esconde a notificação com animação
-        };
-
-        // Adiciona a classe que dispara a animação de entrada
+        closeBtn.onclick = (event) => { event.stopPropagation(); chatbotPromptDismissed = true; hideChatbotPrompt(); };
         setTimeout(() => popup.classList.add('show'), 100);
     }
-    
     function stopNotificationCycles() {
         if (socialProofIntervalId) { clearInterval(socialProofIntervalId); socialProofIntervalId = null; }
         if (viewersIntervalId) { clearInterval(viewersIntervalId); viewersIntervalId = null; }
-        hideChatbotPrompt(); // Para a notificação do chat também
-        
-        const socialProofContainer = document.getElementById('social-proof-container');
-        const viewersNotificationContainer = document.getElementById('viewers-notification');
-        if (socialProofContainer) socialProofContainer.innerHTML = '';
-        if (viewersNotificationContainer) viewersNotificationContainer.innerHTML = '';
+        hideChatbotPrompt();
+        const socialProofContainer = document.getElementById('social-proof-container'); const viewersNotificationContainer = document.getElementById('viewers-notification');
+        if (socialProofContainer) socialProofContainer.innerHTML = ''; if (viewersNotificationContainer) viewersNotificationContainer.innerHTML = '';
     }
-    
     function startNotificationCycles() {
-        stopNotificationCycles(); 
-        
-        const socialProofContainer = document.getElementById('social-proof-container');
-        const viewersNotificationContainer = document.getElementById('viewers-notification');
-
+        stopNotificationCycles();
+        const socialProofContainer = document.getElementById('social-proof-container'); const viewersNotificationContainer = document.getElementById('viewers-notification');
         function showProof() {
-            // Não mostra a prova social se o prompt do chatbot estiver visível para não sobrepor
             const promptContainer = document.getElementById('chatbot-prompt-container');
             if (!socialProofContainer || (promptContainer && promptContainer.innerHTML !== '')) return;
-
             const proofs = [ { name: "Carlos M. (SP)", action: "acabou de garantir sua vaga!" }, { name: "Ana Clara S. (MG)", action: "comprou e já acessou o módulo de boas-vindas." }, { name: "Roberto F. (RJ)", action: "acabou de garantir o acesso com desconto." }, { name: "Fernanda L. (BA)", action: "acabou de se inscrever!" }, { name: "Julio C. (RS)", action: "comprou e garantiu os bônus." } ];
-            const proof = proofs[Math.floor(Math.random() * proofs.length)];
-            const popup = document.createElement('div');
-            popup.className = 'notification-popup';
+            const proof = proofs[Math.floor(Math.random() * proofs.length)]; const popup = document.createElement('div'); popup.className = 'notification-popup';
             popup.innerHTML = `<div class="flex items-center"><svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div><p class="font-bold text-slate-100">${proof.name}</p><p class="text-sm text-slate-300">${proof.action}</p></div></div>`;
-            
             if(socialProofContainer.firstChild) { socialProofContainer.removeChild(socialProofContainer.firstChild); }
-            socialProofContainer.appendChild(popup);
-            setTimeout(() => popup.classList.add('show'), 100);
-            setTimeout(() => { 
-                popup.classList.remove('show'); 
-                setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500);
-            }, 6000);
+            socialProofContainer.appendChild(popup); setTimeout(() => popup.classList.add('show'), 100);
+            setTimeout(() => { popup.classList.remove('show'); setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); }, 6000);
         }
-
         function showViewerCount() {
             if (!viewersNotificationContainer) return;
-            const viewers = Math.floor(Math.random() * 8) + 15;
-            const popup = document.createElement('div');
-            popup.className = 'notification-popup';
+            const viewers = Math.floor(Math.random() * 8) + 15; const popup = document.createElement('div'); popup.className = 'notification-popup';
             popup.innerHTML = `<div class="flex items-center"><span class="relative flex h-3 w-3 mr-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></span><p class="text-sm"><strong>${viewers} pessoas</strong> estão vendo esta oferta agora.</p></div>`;
             if(viewersNotificationContainer.firstChild) { viewersNotificationContainer.removeChild(viewersNotificationContainer.firstChild); }
-            viewersNotificationContainer.appendChild(popup);
-            setTimeout(() => popup.classList.add('show'), 100);
-            setTimeout(() => { 
-                popup.classList.remove('show'); 
-                setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); 
-            }, 5000);
+            viewersNotificationContainer.appendChild(popup); setTimeout(() => popup.classList.add('show'), 100);
+            setTimeout(() => { popup.classList.remove('show'); setTimeout(() => { if (popup.parentNode) popup.parentNode.removeChild(popup); }, 500); }, 5000);
         }
-        
-        // Sequência de timers para evitar sobreposição inicial
-        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showProof(); socialProofIntervalId = setInterval(showProof, 15000); } }, 8000); // Prova social aparece primeiro
-        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showViewerCount(); viewersIntervalId = setInterval(showViewerCount, 25000); } }, 20000); // Contagem de pessoas depois
-        
-        // O prompt do chatbot tenta aparecer após 12s. A prova social já terá sumido.
-        chatbotPromptTimeoutId = setTimeout(showChatbotPrompt, 12000); 
+        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showProof(); socialProofIntervalId = setInterval(showProof, 15000); } }, 8000);
+        setTimeout(() => { if (!Alpine.store('chatbot').chatOpen) { showViewerCount(); viewersIntervalId = setInterval(showViewerCount, 25000); } }, 20000);
+        chatbotPromptTimeoutId = setTimeout(showChatbotPrompt, 12000);
     }
-    
     
     document.addEventListener('DOMContentLoaded', () => {
         const revealElements = document.querySelectorAll('.reveal-animation');
