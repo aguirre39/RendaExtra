@@ -714,9 +714,13 @@
                     return;
                 }
                 
+                // --- CONFIGURAÇÃO CORRETA DA API ---
+                // Alterado para 'gemini-1.5-flash-latest' para evitar erro 404
                 const apiKey = "AIzaSyA4O6Vv_7TDZnmDJgTsHuf-mAntXNxfVmw"; 
-                const model = "gemini-2.5-flash-preview-05-20"; 
+                const model = "gemini-1.5-flash-latest"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+                
+                
                 const historyForAPI = this.buildHistoryForGemini();
                 const payload = { contents: historyForAPI, safetySettings: [ { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" }, { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" } ] };
                 
