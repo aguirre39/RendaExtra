@@ -733,7 +733,7 @@ Você é o Lucas, um vendedor autônomo, 100% humano, super prestativo e gente b
                 // --- CONFIGURAÇÃO GOOGLE GEMINI ---
                 // Para usar localmente, coloque sua chave aqui: "AIzaSy..."
                 // Aqui no ambiente de preview, o sistema injeta a chave automaticamente.
-                const apiKey = "AIzaSyB5IoDccKVXuuNB_iXaVPy6axbziIhGwnQ"; 
+                const apiKey = "AIzaSyC5aoUeFWfsaYzCLXWmsflBwtjsoiBvIPk"; 
                 const modelName = "gemini-2.0-flash";
 
                 const callGemini = async () => {
@@ -789,21 +789,36 @@ Você é o Lucas, um vendedor autônomo, 100% humano, super prestativo e gente b
                 }
             },
             _addMessage(sender, text) {
-                // Formatar link de pagamento como botão
                 const linkPagamento = "https://pay.kiwify.com.br/sUqnazH?afid=AmSCf2eb";
-                if (text.includes(linkPagamento)) {
-                    const botao = `<br><a href="${linkPagamento}" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 mt-2 mb-2 no-underline text-center w-full">✅ GARANTIR MINHA VAGA</a><br>`;
-                    text = text.replace(linkPagamento, botao);
+                const botaoHTML = `<div class="my-4 w-full text-center"><a href="${linkPagamento}" target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all transform hover:scale-105 no-underline text-sm sm:text-base w-full sm:w-auto">✅ GARANTIR MINHA VAGA COM DESCONTO</a></div>`;
+
+                // Limpeza agressiva para remover "restos" de markdown ou links soltos
+                // 1. Remove formato Markdown completo [Texto](Link)
+                // Regex explicaçao: \[.*?\] pega qualquer coisa em colchetes, \s* permite espaços opcionais, \(.*?link.*?\) pega parenteses contendo o link
+                let cleanText = text.replace(/\[.*?\]\s*\([^)]*kiwify[^)]*\)/gi, "[[BUTTON_PLACEHOLDER]]");
+                
+                // 2. Se não pegou pelo Markdown, tenta pegar o link solto (com ou sem parenteses ao redor)
+                cleanText = cleanText.replace(new RegExp(`\\(?${linkPagamento.replace(/\?/g, '\\?')}\\)?`, 'gi'), "[[BUTTON_PLACEHOLDER]]");
+
+                // 3. Se a IA mandou o link mas a gente não pegou (link encurtado ou variação), força a detecção se tiver 'kiwify' no texto original e for mensagem do Lucas
+                if (sender === 'lucas' && (text.includes('kiwify') || text.includes('garantir sua vaga')) && !cleanText.includes("[[BUTTON_PLACEHOLDER]]")) {
+                     // Se não achou o lugar exato, adiciona no final
+                     cleanText += " [[BUTTON_PLACEHOLDER]]";
                 }
                 
+                // Substitui o placeholder pelo botão. Se tiver múltiplos, substitui todos (mas idealmente deveria ser um só)
+                if (cleanText.includes("[[BUTTON_PLACEHOLDER]]")) {
+                    cleanText = cleanText.replace(/\[\[BUTTON_PLACEHOLDER\]\]/g, botaoHTML);
+                }
+
                 // Formatação básica de Markdown para HTML
                 // Negrito **texto** -> <b>texto</b>
-                text = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+                cleanText = cleanText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
                 
                 // Quebra de linha \n -> <br>
-                text = text.replace(/\n/g, '<br>');
+                cleanText = cleanText.replace(/\n/g, '<br>');
 
-                this.messages.push({ sender, text, id: Date.now() });
+                this.messages.push({ sender, text: cleanText, id: Date.now() });
                 this.$nextTick(() => { if (this.chatContainer) this.chatContainer.scrollTop = this.chatContainer.scrollHeight; });
             }
         });
